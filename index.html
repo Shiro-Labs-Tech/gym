@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiro Gym | Start strong in Surabaya (Concept)</title>
+<meta name="description" content="Shiro Gym is a concept landing page by Shiro Labs: small classes, real coaches and a free first week. Not a real business.">
+<meta name="theme-color" content="#0b0c10">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shiro Labs">
+<meta property="og:title" content="Shiro Gym | Start strong (Concept)">
+<meta property="og:description" content="A landing page case study by Shiro Labs: variable-type hero, live heart-rate trace, class finder and a trilingual build.">
+<meta property="og:url" content="https://gym.shiro-labs.tech/">
+<meta property="og:image" content="https://gym.shiro-labs.tech/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gym.shiro-labs.tech/og.png">
+<script>
+(function(){
+  var d=document.documentElement;
+  d.classList.add('js');
+  try{ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('rm'); }catch(e){}
+  setTimeout(function(){ if(!d.classList.contains('ready')) d.classList.add('loaded','ready','fs'); }, 7000);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c10; --sf:#14161c; --sf2:#1d2029; --tx:#f2f3f5; --mut:#9aa0ab; --lime:#c6ff3d; --lime-d:#a8dc2a; --line:rgba(242,243,245,.14);
+  --disp:"Anybody","Arial Narrow",Impact,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --e:cubic-bezier(.16,1,.3,1);
+  --m:clamp(20px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.rm{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html.js:not(.loaded) body{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,p,ul{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+section[id]{scroll-margin-top:90px}
+.wrap{max-width:1400px;margin:0 auto;padding:0 var(--m)}
+.lbl{font:600 12px/1.2 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.disp{font-family:var(--disp);text-transform:uppercase;line-height:.9;letter-spacing:-.01em;font-variation-settings:"wdth" 112,"wght" 820}
+em.a{font-style:normal;color:var(--lime)}
+.lime-bg em.a{color:var(--bg)}
+
+/* ---------- loader: venetian slats ---------- */
+#loader{display:none}
+html.js #loader{display:block;position:fixed;inset:0;z-index:200;pointer-events:all}
+html.js.loaded #loader{pointer-events:none}
+html.rm #loader{display:none}
+.slats{position:absolute;inset:0;display:flex}
+.slat{flex:1;background:#0b0c10;margin-right:-1px;transition:transform .9s cubic-bezier(.76,0,.24,1);transition-delay:calc(var(--i)*70ms)}
+html.js.go .slat{transform:translateY(-101%)}
+.ld{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--m);transition:opacity .35s ease}
+html.js.go .ld{opacity:0}
+.ld .top{display:flex;justify-content:space-between;color:var(--mut)}
+.ld .mid{display:flex;align-items:flex-end;gap:clamp(12px,3vw,40px);flex-wrap:wrap}
+.ld .num{font-family:var(--disp);font-variation-settings:"wdth" 130,"wght" 900;font-size:clamp(96px,20vw,300px);line-height:.8;color:var(--lime);font-variant-numeric:tabular-nums}
+.ld .pc{font-family:var(--disp);font-variation-settings:"wdth" 100,"wght" 800;font-size:clamp(28px,5vw,64px);color:var(--tx);padding-bottom:.1em}
+.plates{display:flex;gap:6px;align-items:flex-end;height:64px}
+.plates i{display:block;width:clamp(14px,2.4vw,30px);background:rgba(242,243,245,.14);border-radius:2px;transition:background .15s,transform .15s}
+.plates i:nth-child(1),.plates i:nth-child(10){height:50%}.plates i:nth-child(2),.plates i:nth-child(9){height:64%}.plates i:nth-child(3),.plates i:nth-child(8){height:78%}.plates i:nth-child(4),.plates i:nth-child(7){height:90%}.plates i:nth-child(5),.plates i:nth-child(6){height:100%}
+.plates i.on{background:var(--lime);transform:scaleY(1.08)}
+
+
+/* ---------- locations map ---------- */
+.mapx{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:28px 40px;align-items:stretch}
+@media (max-width:980px){.mapx{grid-template-columns:1fr}}
+.mtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.mtab{min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--tx);cursor:pointer;font:700 15px var(--body);transition:all .3s var(--e)}
+.mtab:hover{border-color:var(--lime)}
+.mtab[aria-pressed="true"]{background:var(--lime);color:var(--bg);border-color:var(--lime)}
+.mapbox{position:relative;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:#0e1016;width:100%;min-width:0;aspect-ratio:1000/720}
+@media (max-width:640px){.mapbox .pin .tag{font-size:36px;stroke-width:9px}.mapbox .cap{font-size:10px;left:14px;right:14px}.mapbox .pin .dot{stroke-width:4}}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mapbox .gl{stroke:rgba(255,255,255,.045);stroke-width:1}
+.mapbox .rd{fill:none;stroke:rgba(198,255,61,.22);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.mapbox .rd2{fill:none;stroke:rgba(255,255,255,.07);stroke-width:1.4;stroke-linecap:round}
+.mapbox .blk{fill:rgba(255,255,255,.025)}
+.mapbox .hub{fill:none;stroke:rgba(255,255,255,.16);stroke-dasharray:3 7}
+.mapbox .pin{cursor:pointer;outline:none}
+.mapbox .pin .dot{fill:var(--bg);stroke:var(--lime);stroke-width:3;transition:all .35s var(--e);transform-box:fill-box;transform-origin:center}
+.mapbox .pin .pulse{fill:none;stroke:var(--lime);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.mapbox .pin .tag{font:700 22px var(--body);fill:#c9ced6;paint-order:stroke;stroke:#0e1016;stroke-width:6px;transition:fill .3s}
+.mapbox .pin:hover .dot,.mapbox .pin:focus-visible .dot{fill:var(--lime)}
+.mapbox .pin[aria-pressed="true"] .dot{fill:var(--lime);transform:scale(1.5)}
+.mapbox .pin[aria-pressed="true"] .tag{fill:var(--lime)}
+.mapbox .pin[aria-pressed="true"] .pulse{animation:pls 2.2s var(--e) infinite}
+html.rm .mapbox .pin .pulse{animation:none!important}
+@keyframes pls{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(4.4)}}
+.mapbox .cap{position:absolute;left:20px;bottom:16px;right:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);pointer-events:none}
+.blist{display:flex;flex-direction:column;gap:10px}
+.bcard{width:100%;text-align:left;padding:16px 20px;border-radius:22px;border:1.5px solid var(--line);background:transparent;color:var(--tx);cursor:pointer;display:grid;grid-template-columns:36px minmax(0,1fr);gap:2px 14px;align-items:center;transition:all .35s var(--e)}
+.bcard:hover{border-color:var(--lime)}
+.bcard .bn{font-family:var(--disp);font-variation-settings:"wdth" 100,"wght" 850;font-size:20px;grid-row:span 2;color:var(--lime)}
+.bcard b{font-size:18px;overflow-wrap:anywhere}
+.bcard span{font-size:14px;color:var(--mut)}
+.bcard[aria-pressed="true"]{background:var(--lime);color:var(--bg);border-color:var(--lime)}
+.bcard[aria-pressed="true"] .bn,.bcard[aria-pressed="true"] span{color:rgba(11,12,16,.75)}
+.bdet{margin-top:6px;padding:20px 22px;border-radius:22px;background:var(--sf);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.bdet p{color:var(--mut);font-size:15px}
+.bdet a.ol{font-weight:700;font-size:15px;color:var(--lime);text-decoration:underline;text-underline-offset:4px;align-self:flex-start}
+
+/* ---------- reveals ---------- */
+.js .rv{opacity:0;transform:translateY(46px) scale(.97);filter:blur(10px);transition:opacity .9s var(--e) var(--d,0s),transform 1s var(--e) var(--d,0s),filter .9s var(--e) var(--d,0s)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+.w{display:inline-block}
+.js .w{opacity:0;transform:translateY(.6em) rotate(5deg);transform-origin:0 100%;transition:opacity .7s var(--e) calc(var(--i)*55ms),transform .9s var(--e) calc(var(--i)*55ms)}
+.js .in .w,.js .w.in{opacity:1;transform:none}
+html.fs .rv,html.fs .w,html.fs .ch,html.rm .rv,html.rm .w,html.rm .ch{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+
+/* ---------- cursor ---------- */
+#cur,#ring{display:none}
+@media (hover:hover) and (pointer:fine){
+  html.js:not(.rm) #cur,html.js:not(.rm) #ring{display:block;position:fixed;left:0;top:0;pointer-events:none;z-index:300;border-radius:50%;will-change:transform}
+  #cur{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--lime)}
+  #ring{width:44px;height:44px;margin:-22px 0 0 -22px;border:1.5px solid rgba(198,255,61,.7);transition:width .35s var(--e),height .35s var(--e),margin .35s var(--e),background .3s,border-color .3s}
+  #ring.big{width:76px;height:76px;margin:-38px 0 0 -38px;background:rgba(198,255,61,.14)}
+  #ring.dn{width:30px;height:30px;margin:-15px 0 0 -15px}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:max-content;z-index:100;display:flex;white-space:nowrap;align-items:center;gap:6px;padding:7px 8px 7px 18px;background:rgba(20,22,28,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line);border-radius:999px;max-width:calc(100vw - 24px)}
+.nav .logo{display:flex;align-items:center;gap:10px;margin-right:10px;font-family:var(--disp);font-variation-settings:"wdth" 120,"wght" 800;text-transform:uppercase;font-size:15px;white-space:nowrap}
+.nav .logo b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--lime);color:var(--bg);font:900 17px/1 "Noto Serif JP","Hiragino Mincho ProN",serif}
+.nav .lk{flex:none;padding:9px 13px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mut);transition:color .25s,background .25s}
+.nav .lk:hover{color:var(--tx);background:rgba(242,243,245,.08)}
+.nav .open{display:flex;align-items:center;gap:8px;padding:0 12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mut);flex:none}
+.dot.on{background:var(--lime);box-shadow:0 0 0 0 rgba(198,255,61,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(198,255,61,0)}100%{box-shadow:0 0 0 0 rgba(198,255,61,0)}}
+html.rm .dot.on{animation:none}
+.nav .join{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;background:var(--lime);color:var(--bg);font-weight:700;font-size:14px;transition:transform .3s var(--e),background .3s}
+.nav .join:hover{background:#fff;transform:scale(1.04)}
+@media (max-width:900px){.nav .lk{display:none}}
+@media (max-width:560px){.nav .open span.t{display:none}.nav{padding-left:12px}.nav .logo{margin-right:2px}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;border:1.5px solid transparent;font:700 16px/1 var(--body);cursor:pointer;transition:transform .4s var(--e),background .3s,color .3s,border-color .3s}
+.btn:hover{transform:translateY(-3px)}
+.btn svg{transition:transform .4s var(--e)}
+.btn:hover svg{transform:translateX(5px)}
+.btn-lime{background:var(--lime);color:var(--bg)}
+.btn-lime:hover{background:#fff}
+.btn-ghost{border-color:var(--line);color:var(--tx)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.btn-dark{background:var(--bg);color:var(--lime)}
+.btn-dark:hover{background:#000}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:max(720px,100svh);display:flex;flex-direction:column;overflow:clip;padding-top:110px}
+.hero .grid{width:100%;position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;padding-bottom:262px}
+.hero h1{display:flex;flex-direction:column;font-size:clamp(72px,15vw,260px);line-height:.8;letter-spacing:-.015em;text-transform:uppercase;font-family:var(--disp);user-select:none}
+.hero h1 .row{display:flex;white-space:nowrap}
+.ch{display:inline-block;font-variation-settings:"wdth" 80,"wght" 640;will-change:font-variation-settings}
+.js .ch{opacity:0;transform:translateY(60%) rotate(8deg);transform-origin:0 100%}
+html.ready .ch{opacity:1;transform:none;transition:opacity .8s var(--e) calc(var(--i)*60ms+.15s),transform 1s var(--e) calc(var(--i)*60ms+.15s)}
+.hero h1 .row.l2 .ch{color:var(--lime)}
+.hero .lead{max-width:520px;font-size:clamp(18px,1.6vw,22px);color:#c9ced6}
+.hero .lead b{color:var(--tx);font-weight:700}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.plate{position:absolute;z-index:1;right:-5vw;top:11vh;width:min(40vw,520px);aspect-ratio:1;opacity:.38;pointer-events:none}
+.plate svg{width:100%;height:100%;display:block}
+@media (max-width:820px){.plate{width:84vw;right:-38vw;top:34vh;opacity:.18}}
+.ecg{position:absolute;z-index:3;left:0;right:0;bottom:0;height:230px;border-top:1px solid var(--line);background:linear-gradient(to top,rgba(11,12,16,.9),rgba(11,12,16,0))}
+.ecg canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ecg .hud{position:absolute;z-index:2;left:0;right:0;top:14px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.ecg .bpm{display:flex;align-items:baseline;gap:10px}
+.ecg .bpm strong{font-family:var(--disp);font-variation-settings:"wdth" 110,"wght" 850;font-size:clamp(34px,4.4vw,60px);line-height:.9;color:var(--lime);font-variant-numeric:tabular-nums}
+.ecg .hint{text-align:right;max-width:260px;position:relative;z-index:3}
+
+/* ---------- velocity marquee ---------- */
+.mqs{padding:clamp(40px,6vw,90px) 0;overflow:hidden;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.mq{display:flex;width:max-content;will-change:transform}
+.mq .set{display:flex;align-items:center;flex:none}
+.mq .set span{font-family:var(--disp);font-variation-settings:"wdth" 120,"wght" 900;text-transform:uppercase;font-size:clamp(56px,10vw,170px);line-height:1;padding:0 .22em;white-space:nowrap}
+.mq .set span.o{color:transparent;-webkit-text-stroke:2px rgba(242,243,245,.55)}
+.mq .set span.s{color:var(--lime);font-size:.5em;padding:0 .1em}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(80px,10vw,150px) 0}
+.sh{display:flex;align-items:center;gap:18px;margin-bottom:clamp(28px,4vw,52px)}
+.sh i{display:block;width:34px;height:2px;background:var(--lime)}
+.h2{font-size:clamp(46px,9vw,150px);max-width:12ch}
+.intro{display:flex;flex-wrap:wrap;gap:24px 64px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,6vw,90px)}
+.intro p{max-width:430px;color:var(--mut);font-size:18px}
+
+/* why: sticky stack */
+.stack{position:relative;display:flex;flex-direction:column;gap:0;padding-bottom:6vh}
+.sc{position:sticky;top:calc(96px + var(--i)*22px);min-height:min(66vh,520px);margin-bottom:5vh;border-radius:32px;padding:clamp(24px,4vw,56px);display:flex;flex-wrap:wrap;gap:24px 56px;justify-content:space-between;align-items:stretch;overflow:hidden;transform-origin:50% 0}
+.sc.c1{background:var(--lime);color:var(--bg)}
+.sc.c2{background:var(--sf2);border:1px solid var(--line)}
+.sc.c3{background:#f2f3f5;color:var(--bg)}
+.sc .l{flex:1 1 360px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.sc .no{font-family:var(--disp);font-variation-settings:"wdth" 130,"wght" 900;font-size:clamp(20px,2vw,28px)}
+.sc h3{font-family:var(--disp);text-transform:uppercase;font-variation-settings:"wdth" 108,"wght" 820;font-size:clamp(34px,5vw,78px);line-height:.92;letter-spacing:-.01em;max-width:11ch}
+.sc p{max-width:44ch;font-size:18px;opacity:.82}
+.sc .big{flex:1 1 300px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;font-family:var(--disp);text-transform:uppercase;font-variation-settings:"wdth" 140,"wght" 900;font-size:clamp(64px,11vw,190px);line-height:.85;text-align:right;letter-spacing:-.02em}
+.sc.c2 .big{color:var(--lime)}
+.sc .big small{display:block;font-size:.2em;letter-spacing:.06em;margin-top:.5em;font-variation-settings:"wdth" 100,"wght" 700;opacity:.7}
+@media (max-width:700px){.sc{position:relative;top:auto!important;min-height:0}.sc .big{align-items:flex-start;text-align:left}}
+
+/* quiz */
+.quiz{background:var(--sf);border:1px solid var(--line);border-radius:36px;padding:clamp(24px,4vw,64px);min-height:440px;display:flex;flex-direction:column;gap:32px;position:relative;overflow:hidden}
+.prog{display:flex;gap:8px}
+.prog i{flex:1;height:5px;border-radius:3px;background:var(--sf2);position:relative;overflow:hidden}
+.prog i::after{content:"";position:absolute;inset:0;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--e)}
+.prog i.on::after{transform:none}
+.qh{font-size:clamp(34px,6vw,92px);max-width:14ch}
+.qstep{display:flex;flex-direction:column;gap:32px;animation:stepIn .7s var(--e) both}
+html.rm .qstep{animation:none}
+@keyframes stepIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:76px;padding:18px 24px;border-radius:20px;border:1.5px solid var(--line);background:transparent;cursor:pointer;text-align:left;font-size:19px;font-weight:600;transition:background .3s,color .3s,border-color .3s,transform .4s var(--e)}
+.opt small{display:block;font-size:14px;font-weight:500;color:var(--mut);transition:color .3s}
+.opt:hover{background:var(--lime);color:var(--bg);border-color:var(--lime);transform:translateY(-3px)}
+.opt:hover small{color:rgba(11,12,16,.7)}
+.back{align-self:flex-start;background:none;border:0;cursor:pointer;color:var(--mut);font-weight:600;font-size:15px;padding:10px 0;min-height:44px}
+.back:hover{color:var(--lime)}
+.res{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"lbl stamp" "nm stamp" "meta stamp" "perf perf" "bot bot";gap:18px 40px;align-items:start;animation:stepIn .7s var(--e) both}
+.res>.lbl{grid-area:lbl}
+.res .rl{grid-area:nm;min-width:0;container-type:inline-size}
+.res .nm{font-size:clamp(22px,8.2cqw,112px);line-height:.95;margin:0}
+.res .nm .w2{display:inline-block;margin-right:.28em;animation:wordUp .8s var(--e) both;animation-delay:calc(var(--i)*110ms + .2s)}
+.res .meta{grid-area:meta;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.res .meta .chip{animation:chipPop .6s var(--e) both;animation-delay:calc(var(--i)*90ms + .65s)}
+.res .perf{grid-area:perf;position:relative;height:0;border-top:2px dashed var(--line);margin:10px 0 4px}
+.res .perf::before,.res .perf::after{content:"";position:absolute;top:-15px;width:28px;height:28px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.res .perf::before{left:calc(-1*clamp(24px,4vw,64px) - 14px)}
+.res .perf::after{right:calc(-1*clamp(24px,4vw,64px) - 14px)}
+.res .bot{grid-area:bot;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:20px 48px;align-items:center}
+.res .bot p{color:var(--mut);max-width:56ch}
+.chip{display:inline-flex;align-items:center;min-height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:15px}
+.chip.l{background:var(--lime);border-color:var(--lime);color:var(--bg)}
+.res .side{display:flex;flex-direction:column;gap:12px;align-items:flex-start;min-width:min(100%,320px)}
+.res .side .btn{animation:glow 2.2s ease-in-out 1.6s 3}
+@media (max-width:860px){.res{grid-template-areas:"lbl stamp" "nm nm" "meta meta" "perf perf" "bot bot"}.res .bot{grid-template-columns:1fr}.res .side{min-width:0;width:100%}.res .side .btn{width:100%}}
+.stamp{grid-area:stamp;position:relative;width:clamp(104px,15vw,190px);aspect-ratio:1;display:grid;place-items:center;container-type:inline-size;transform:rotate(-8deg)}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 16s linear infinite}
+.stamp svg text{font:800 8.4px var(--body);letter-spacing:.14em;fill:var(--lime);text-transform:uppercase}
+.stamp .core{position:relative;z-index:1;width:70%;aspect-ratio:1;border-radius:50%;background:var(--lime);color:var(--bg);display:grid;place-content:center;text-align:center;line-height:1}
+.stamp .core small{font:800 8cqw var(--body);letter-spacing:.14em;opacity:.7}
+.stamp .core b{font-family:var(--disp);font-variation-settings:"wdth" 100,"wght" 900;font-size:15cqw;font-variant-numeric:tabular-nums;margin-top:3cqw;white-space:nowrap}
+.stamp::after{content:"";position:absolute;inset:15%;border-radius:50%;border:3px solid var(--lime);opacity:0;pointer-events:none}
+.res.go .stamp{animation:stampIn 1s cubic-bezier(.2,1.4,.4,1) both}
+.res.go .stamp.done::after{animation:wave 1.2s var(--e) both}
+.res.go .stamp.done .core{animation:coreBump .6s var(--e)}
+.res.still .nm .w2,.res.still .meta .chip,.res.still .side .btn,.res.still .stamp{animation:none!important}
+.cf{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6}
+html.rm .res *,html.rm .res{animation:none!important}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes stampIn{0%{transform:scale(2.8) rotate(-34deg);opacity:0}55%{opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+@keyframes wave{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.4)}}
+@keyframes coreBump{0%{transform:scale(1)}40%{transform:scale(1.14)}100%{transform:scale(1)}}
+@keyframes wordUp{from{opacity:0;transform:translateY(55%);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes chipPop{from{opacity:0;transform:translateY(14px) scale(.85)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(198,255,61,0)}50%{box-shadow:0 0 0 10px rgba(198,255,61,.22)}}
+
+/* schedule */
+.sched{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px 56px;align-items:start}
+@media (max-width:900px){.sched{grid-template-columns:1fr}}
+.dstrip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.dbtn{min-height:60px;min-width:76px;padding:0 20px;border-radius:18px;border:1.5px solid var(--line);background:transparent;cursor:pointer;font-family:var(--disp);font-variation-settings:"wdth" 110,"wght" 800;text-transform:uppercase;font-size:22px;position:relative;transition:all .35s var(--e)}
+.dbtn:hover{border-color:var(--lime)}
+.dbtn[aria-pressed="true"]{background:var(--lime);color:var(--bg);border-color:var(--lime);transform:translateY(-4px)}
+.dbtn .td{position:absolute;top:8px;right:9px;width:6px;height:6px;border-radius:50%;background:var(--lime)}
+.dbtn[aria-pressed="true"] .td{background:var(--bg)}
+.slots{display:flex;flex-direction:column;gap:10px}
+.slot{display:grid;grid-template-columns:max-content minmax(0,1fr) auto;align-items:center;gap:6px 24px;min-height:84px;padding:14px 24px;border-radius:22px;border:1.5px solid var(--line);background:transparent;cursor:pointer;text-align:left;transition:all .35s var(--e);animation:stepIn .6s var(--e) both;animation-delay:calc(var(--i)*60ms)}
+html.rm .slot{animation:none}
+.slot .t{font-family:var(--disp);font-variation-settings:"wdth" 100,"wght" 850;font-size:clamp(24px,2.5vw,36px);line-height:1;font-variant-numeric:tabular-nums;min-width:5.4ch;white-space:nowrap}
+.slot .n{font-weight:700;font-size:19px}
+.slot .m{font-size:14px;color:var(--mut);font-weight:600;white-space:nowrap}
+.slot:hover{border-color:var(--lime);transform:translateX(6px)}
+.slot[aria-pressed="true"]{background:var(--lime);color:var(--bg);border-color:var(--lime)}
+.slot[aria-pressed="true"] .m{color:rgba(11,12,16,.7)}
+@media (max-width:560px){.slot{grid-template-columns:max-content minmax(0,1fr);gap:6px 16px}.slot .m{display:none}}
+.det{position:sticky;top:100px;background:var(--sf);border:1px solid var(--line);border-radius:32px;padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:20px;min-height:380px;container-type:inline-size}
+.det .dn{font-size:clamp(26px,8cqw,64px);font-variation-settings:"wdth" 100,"wght" 850;overflow-wrap:anywhere;hyphens:auto;max-width:100%}
+.det p{color:var(--mut)}
+.det .row{display:flex;flex-wrap:wrap;gap:10px}
+.det .btn{margin-top:auto;align-self:flex-start}
+.flash{animation:flash .6s var(--e)}
+@keyframes flash{from{opacity:.2;transform:translateY(14px)}to{opacity:1;transform:none}}
+html.rm .flash{animation:none}
+
+/* plans */
+.lime-bg{background:var(--lime);color:var(--bg)}
+.lime-bg .lbl{color:rgba(11,12,16,.7)}
+.lime-bg .sh i{background:var(--bg)}
+.lime-bg .intro p{color:rgba(11,12,16,.75)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;perspective:1200px}
+@media (max-width:980px){.plans{grid-template-columns:1fr}}
+.plan{position:relative;display:flex;flex-direction:column;gap:22px;min-height:470px;padding:clamp(24px,3vw,40px);border-radius:30px;background:var(--bg);color:var(--tx);transform-style:preserve-3d;transition:transform .5s var(--e);overflow:hidden;will-change:transform;container-type:inline-size}
+.plan::after{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(198,255,61,.2),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.plan:hover::after{opacity:1}
+.plan.f{background:#fff;color:var(--bg)}
+.plan.f::after{background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(198,255,61,.55),transparent 60%)}
+.plan .tp{display:flex;justify-content:space-between;align-items:center}
+.plan .bd{padding:6px 12px;border-radius:999px;background:var(--bg);color:var(--lime);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.plan h3{font-family:var(--disp);text-transform:uppercase;font-variation-settings:"wdth" 112,"wght" 850;font-size:clamp(24px,9cqw,44px);line-height:.95;overflow-wrap:anywhere}
+.plan .pr{font-family:var(--disp);font-variation-settings:"wdth" 105,"wght" 900;font-size:clamp(34px,14cqw,76px);line-height:.9;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.plan .pr small{font:700 13px var(--body);letter-spacing:.1em;margin-left:8px;opacity:.65}
+.plan p{color:var(--mut)}
+.plan.f p{color:#4d525c}
+.plan ul{display:flex;flex-direction:column;gap:10px;font-size:16px;font-weight:600}
+.plan li{display:flex;gap:12px;align-items:flex-start}
+.plan li::before{content:"";width:10px;height:10px;margin-top:8px;border-radius:2px;background:var(--lime);flex:none}
+.plan.f li::before{background:var(--bg)}
+.plan .btn{margin-top:auto;width:100%}
+
+/* faq */
+.fgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 80px}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr}}
+.fq{border-top:1px solid var(--line)}
+.fq:last-child{border-bottom:1px solid var(--line)}
+.fq button{width:100%;display:grid;grid-template-columns:56px 1fr 28px;align-items:center;gap:8px;min-height:84px;padding:18px 0;background:none;border:0;text-align:left;cursor:pointer;font-weight:700;font-size:clamp(19px,2vw,26px);line-height:1.2}
+.fq .n{font-family:var(--disp);font-variation-settings:"wdth" 120,"wght" 800;color:var(--lime);font-size:18px}
+.fq .pm{position:relative;width:20px;height:20px}
+.fq .pm::before,.fq .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:var(--lime);transition:transform .5s var(--e)}
+.fq .pm::after{transform:rotate(90deg)}
+.fq.open .pm::after{transform:rotate(0)}
+.fq .fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--e)}
+.fq.open .fa{grid-template-rows:1fr}
+.fq .fi{overflow:hidden}
+.fq .fi p{padding:0 0 28px 64px;max-width:58ch;color:var(--mut)}
+
+/* final */
+.final{padding:clamp(90px,12vw,190px) 0 clamp(60px,8vw,110px)}
+.final .big{font-size:clamp(64px,15vw,260px);line-height:.82;font-variation-settings:"wdth" 130,"wght" 900}
+.final .row{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;margin-top:clamp(32px,4vw,56px)}
+.final .row p{max-width:420px;font-weight:600;font-size:18px}
+footer{background:#000;color:var(--mut);padding:36px 0 44px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 48px;align-items:flex-start}
+footer .logo{display:flex;align-items:center;gap:10px;color:var(--tx);font-family:var(--disp);font-variation-settings:"wdth" 120,"wght" 800;text-transform:uppercase}
+footer .logo b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--lime);color:var(--bg);font:900 15px/1 "Noto Serif JP",serif}
+footer p{max-width:60ch}
+
+/* ---------- language switch + i18n fixes ---------- */
+.pnote{margin-top:22px;font-size:14px;font-weight:600;color:#4d525c;max-width:70ch}
+.pnote:empty{display:none}
+.lang{position:fixed;right:14px;bottom:14px;z-index:100;display:flex;gap:2px;padding:5px;background:rgba(20,22,28,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:999px}
+.lang button{min-width:44px;min-height:40px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--mut);font:700 13px var(--body);letter-spacing:.08em;cursor:pointer;transition:all .25s var(--e)}
+.lang button:hover{color:var(--tx)}
+.lang button[aria-pressed="true"]{background:var(--lime);color:var(--bg)}
+.fgrid>div:first-child{min-width:0;container-type:inline-size}
+#faq .h2{font-size:clamp(32px,16cqw,150px);max-width:none;overflow-wrap:anywhere}
+.fgrid>div:last-child{min-width:0}
+.h2,.big,.sc h3,.plan h3{overflow-wrap:anywhere}
+.nm,.dn{overflow-wrap:normal;word-break:normal;text-wrap:balance}
+html[lang="ja"]{--body:"Hanken Grotesk","Noto Sans JP","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;--disp:"Anybody","Noto Sans JP","Hiragino Sans","Yu Gothic",Meiryo,sans-serif}
+html[lang="ja"] .h2,html[lang="ja"] .hero h1,html[lang="ja"] .big,html[lang="ja"] .nm,html[lang="ja"] .dn,html[lang="ja"] .qh,html[lang="ja"] .sc h3,html[lang="ja"] .plan h3,html[lang="ja"] .mq .set span,html[lang="ja"] .slot .n{letter-spacing:0;line-height:1.08;font-weight:900;text-transform:none}
+html[lang="ja"] .hero h1{line-height:.95}
+html[lang="ja"] .h2{font-size:clamp(40px,7vw,110px);max-width:14ch}
+html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
+@media (max-width:560px){.lang{right:10px;bottom:10px}}
+</style>
+</head>
+<body>
+
+<div id="cur" aria-hidden="true"></div><div id="ring" aria-hidden="true"></div>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="slats"><i class="slat" style="--i:0"></i><i class="slat" style="--i:1"></i><i class="slat" style="--i:2"></i><i class="slat" style="--i:3"></i><i class="slat" style="--i:4"></i><i class="slat" style="--i:5"></i><i class="slat" style="--i:6"></i><i class="slat" style="--i:7"></i></div>
+  <div class="ld">
+    <div class="top lbl"><span>Shiro Gym</span><span>Warm up</span></div>
+    <div class="mid">
+      <span class="num" id="count">000</span><span class="pc">%</span>
+      <div class="plates" id="plates"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="#top" aria-label="Shiro Gym, back to top"><b aria-hidden="true">白</b>Shiro Gym</a>
+  <a class="lk" href="#why">Why</a><a class="lk" href="#find">Find a class</a><a class="lk" href="#schedule">Schedule</a><a class="lk" href="#locations">Locations</a><a class="lk" href="#plans">Plans</a><a class="lk" href="#faq">FAQ</a>
+  <span class="open" role="status"><span class="dot" id="dot"></span><span class="t" id="stText">Hours</span></span>
+  <a class="join" href="#find">Free week</a>
+</nav>
+
+<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true" lang="en">EN</button><button type="button" data-l="id" aria-pressed="false" lang="id">ID</button><button type="button" data-l="ja" aria-pressed="false" lang="ja">日本語</button></div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Shiro Gym introduction">
+  <div class="plate" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none">
+      <g id="ticks"></g>
+      <circle cx="200" cy="200" r="190" stroke="#c6ff3d" stroke-width="16"/>
+      <circle cx="200" cy="200" r="146" stroke="rgba(242,243,245,.16)" stroke-width="2"/>
+      <circle cx="200" cy="200" r="104" stroke="rgba(242,243,245,.1)" stroke-width="2"/>
+      <circle cx="200" cy="200" r="46" stroke="#c6ff3d" stroke-width="4"/>
+      <circle cx="200" cy="200" r="14" fill="#0b0c10" stroke="rgba(242,243,245,.4)" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="wrap grid">
+    <h1 aria-label="Start strong.">
+      <span class="row l1" data-flex aria-hidden="true">START</span>
+      <span class="row l2" data-flex aria-hidden="true">STRONG.</span>
+    </h1>
+    <p class="lead rv" style="--d:.5s">Small classes, real coaches and a clean floor open 05:00 to 23:00. <b>Your first week is free</b>, no card needed.</p>
+    <div class="ctas rv" style="--d:.65s">
+      <a class="btn btn-lime" href="#find"><span>Find my first class</span>
+        <svg width="18" height="12" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+      <a class="btn btn-ghost" href="#schedule">See the schedule</a>
+    </div>
+  </div>
+  <div class="ecg" aria-hidden="true">
+    <canvas id="ecg"></canvas>
+    <div class="wrap hud">
+      <div class="bpm"><strong id="bpm">062</strong><span class="lbl">BPM, live</span></div>
+      <p class="lbl hint">Move your cursor or scroll to raise your heart rate</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqs" aria-hidden="true">
+  <div class="mq" data-dir="1"><div class="set"><span>First week free</span><span class="s">/</span><span class="o">No joining fee</span><span class="s">/</span><span>Coached start</span><span class="s">/</span><span class="o">Open 05:00 to 23:00</span><span class="s">/</span></div><div class="set"><span>First week free</span><span class="s">/</span><span class="o">No joining fee</span><span class="s">/</span><span>Coached start</span><span class="s">/</span><span class="o">Open 05:00 to 23:00</span><span class="s">/</span></div></div>
+  <div class="mq" data-dir="-1"><div class="set"><span class="o">Strength</span><span class="s">/</span><span>Boxing</span><span class="s">/</span><span class="o">HIIT</span><span class="s">/</span><span>Kettlebells</span><span class="s">/</span><span class="o">Mobility</span><span class="s">/</span></div><div class="set"><span class="o">Strength</span><span class="s">/</span><span>Boxing</span><span class="s">/</span><span class="o">HIIT</span><span class="s">/</span><span>Kettlebells</span><span class="s">/</span><span class="o">Mobility</span><span class="s">/</span></div></div>
+</div>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sh rv"><i></i><span class="lbl">Why Shiro</span></div>
+    <div class="intro">
+      <h2 class="disp h2" data-split="A gym for *busy* people.">A gym for busy people.</h2>
+      <p class="rv" style="--d:.2s">Shiro means white: a blank page, a clean start. Show up, get coached, leave better than you came.</p>
+    </div>
+    <div class="stack">
+      <article class="sc c1" style="--i:0">
+        <div class="l"><span class="no">01</span><div><h3>Open when you are</h3><p style="margin-top:18px">Train before the commute, at lunch, or after the kids are asleep. The floor is open every day.</p></div></div>
+        <div class="big">05:00<small>to 23:00, daily</small></div>
+      </article>
+      <article class="sc c2" style="--i:1">
+        <div class="l"><span class="no" style="color:var(--lime)">02</span><div><h3>Coaches, not counters</h3><p style="margin-top:18px">Your first session is one-on-one. We set a simple eight-week plan and check in on it, so you are never guessing.</p></div></div>
+        <div class="big">1:1<small>first session, included</small></div>
+      </article>
+      <article class="sc c3" style="--i:2">
+        <div class="l"><span class="no">03</span><div><h3>Small classes, clean floor</h3><p style="margin-top:18px">Classes cap at twelve people and equipment is wiped down between sessions. Room to move, room to learn.</p></div></div>
+        <div class="big">12<small>people per class, max</small></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="sec" id="find" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><i></i><span class="lbl">Find your first class</span></div>
+    <div class="quiz rv" id="quiz" aria-live="polite">
+      <div class="prog" id="prog"><i></i><i></i><i></i></div>
+      <div id="qbody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="sec" id="schedule" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><i></i><span class="lbl">Schedule</span></div>
+    <div class="intro">
+      <h2 class="disp h2" data-split="Pick a *slot.*">Pick a slot.</h2>
+      <p class="rv" style="--d:.2s">Every class has a simpler option for each movement, so beginners and regulars train side by side.</p>
+    </div>
+    <div class="sched">
+      <div>
+        <div class="dstrip" id="dstrip" role="group" aria-label="Choose a day"></div>
+        <div class="slots" id="slots"></div>
+      </div>
+      <aside class="det" id="det" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="sec" id="locations" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh rv"><i></i><span class="lbl">Locations (concept)</span></div>
+    <div class="intro">
+      <h2 class="disp h2" data-split="Close to *home.*">Close to home.</h2>
+      <p class="rv" style="--d:.2s">Four clubs in each city, placed where people already commute. Pick a city, then a club.</p>
+    </div>
+    <div class="mtabs" id="mtabs" role="group" aria-label="Choose a city"></div>
+    <div class="mapx">
+      <div class="mapbox" id="mapbox"><svg id="mapsvg" viewBox="0 0 1000 720" role="img" aria-label="Stylized map of club locations"></svg>
+        <div class="cap"><span id="mcap">Stylized map</span><span>Schematic, not to scale</span></div></div>
+      <div>
+        <div class="blist" id="blist"></div>
+        <div class="bdet" id="bdet" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="sec lime-bg" id="plans">
+  <div class="wrap">
+    <div class="sh rv"><i></i><span class="lbl">Plans, rupiah per month</span></div>
+    <div class="intro">
+      <h2 class="disp h2" data-split="No joining *fee.*">No joining fee.</h2>
+      <p class="rv" style="--d:.2s">Every plan starts with the free seven-day pass and runs month to month. Cancel with seven days notice.</p>
+    </div>
+    <div class="plans">
+      <article class="plan rv" data-tilt>
+        <div class="tp"><span class="lbl">01</span></div>
+        <h3>Off-peak</h3>
+        <div class="pr" data-idr="349000"></div>
+        <p>Gym floor, 09:00 to 16:00 on weekdays. Best for shift workers and freelancers.</p>
+        <ul><li>Open gym floor</li><li>Welcome session</li></ul>
+        <a class="btn btn-lime" href="#find">Start free week</a>
+      </article>
+      <article class="plan f rv" style="--d:.12s" data-tilt>
+        <div class="tp"><span class="lbl" style="color:#4d525c">02</span><span class="bd">Most popular</span></div>
+        <h3>All-day</h3>
+        <div class="pr" data-idr="499000"></div>
+        <p>Gym floor any time, plus every class on the schedule.</p>
+        <ul><li>Open gym floor, 05:00 to 23:00</li><li>All group classes</li><li>Coached first session</li></ul>
+        <a class="btn btn-dark" href="#find">Start free week</a>
+      </article>
+      <article class="plan rv" style="--d:.24s" data-tilt>
+        <div class="tp"><span class="lbl">03</span></div>
+        <h3>Train together</h3>
+        <div class="pr" data-idr="899000"></div>
+        <p>All-day access for two people on one plan. Bring a partner, a sibling or a coworker.</p>
+        <ul><li>Everything in All-day</li><li>Two members, one bill</li></ul>
+        <a class="btn btn-lime" href="#find">Start free week</a>
+      </article>
+    </div>
+    <p class="pnote" id="pnote"></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap fgrid">
+    <div>
+      <div class="sh rv"><i></i><span class="lbl">Questions</span></div>
+      <h2 class="disp h2" data-split="Before you *walk in.*">Before you walk in.</h2>
+    </div>
+    <div id="faqs" class="rv" style="--d:.15s"></div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="lime-bg final" id="join">
+  <div class="wrap">
+    <h2 class="disp big" data-split="See you at *05:00.*">See you at 05:00.</h2>
+    <div class="row rv">
+      <a class="btn btn-dark" id="wa-final" href="https://wa.me/" target="_blank" rel="noopener"><span>Start my free week on WhatsApp</span>
+        <svg width="18" height="12" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+      <p>We reply within the hour during opening times and book your coached session.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><b aria-hidden="true">白</b>Shiro Gym</div>
+    <p>Shiro Gym is a concept project by Shiro Labs, made to show a landing page build. It is not a real business, and the prices, classes and hours are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, RM=root.classList.contains('rm');
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+  var ARROW='<svg width="18" height="12" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg>';
+  function wa(t){return 'https://wa.me/?text='+encodeURIComponent(t);}
+  /* ---------- i18n ---------- */
+  var DICT={
+    'Why':['Mengapa','理由'],'Find a class':['Cari kelas','クラス探し'],'Schedule':['Jadwal','スケジュール'],'Locations':['Lokasi','店舗'],'Plans':['Paket','料金'],'FAQ':['FAQ','FAQ'],'Free week':['Minggu gratis','1週間無料'],
+    'Open now':['Buka sekarang','営業中'],'Opens 05:00':['Buka 05:00','5:00開店'],
+    'START':['MULAI','強く'],'STRONG.':['KUAT.','始めよう。'],
+    'Small classes, real coaches and a clean floor open 05:00 to 23:00. <b>Your first week is free</b>, no card needed.':['Kelas kecil, pelatih sungguhan, dan area latihan bersih yang buka 05:00 sampai 23:00. <b>Minggu pertamamu gratis</b>, tanpa kartu.','少人数クラス、本物のコーチ、清潔なフロア。営業は5:00から23:00。<b>最初の1週間は無料</b>、カード不要。'],
+    'Find my first class':['Cari kelas pertamaku','最初のクラスを探す'],'See the schedule':['Lihat jadwal','スケジュールを見る'],'BPM, live':['BPM, langsung','BPM ライブ'],
+    'Move your cursor or scroll to raise your heart rate':['Gerakkan kursor atau scroll untuk menaikkan detak jantung','カーソルを動かすかスクロールして、心拍を上げてみよう'],
+    'First week free':['Minggu pertama gratis','最初の1週間無料'],'No joining fee':['Tanpa biaya pendaftaran','入会金ゼロ'],'Coached start':['Dilatih sejak awal','コーチ付きスタート'],'Open 05:00 to 23:00':['Buka 05:00 sampai 23:00','5:00〜23:00営業'],
+    'Strength':['Kekuatan','筋力'],'Boxing':['Tinju','ボクシング'],'HIIT':['HIIT','HIIT'],'Kettlebells':['Kettlebell','ケトルベル'],'Mobility':['Mobilitas','モビリティ'],
+    'Why Shiro':['Mengapa Shiro','Shiroの理由'],
+    'A gym for *busy* people.':['Gym untuk orang *sibuk.*','忙しい人のための *ジム。*'],
+    'Shiro means white: a blank page, a clean start. Show up, get coached, leave better than you came.':['Shiro berarti putih: halaman kosong, awal yang bersih. Datang, dibimbing, pulang lebih baik dari sebelumnya.','Shiroは「白」。まっさらなページ、きれいなスタート。来て、教わって、来た時より良くなって帰ろう。'],
+    'Open when you are':['Buka kapan pun kamu bisa','あなたの都合に合わせて営業'],
+    'Train before the commute, at lunch, or after the kids are asleep. The floor is open every day.':['Latihan sebelum berangkat kerja, saat makan siang, atau setelah anak tidur. Area latihan buka setiap hari.','通勤前でも、お昼でも、子どもが寝たあとでも。フロアは毎日開いています。'],
+    'to 23:00, daily':['sampai 23:00, setiap hari','〜23:00、毎日'],
+    'Coaches, not counters':['Dibimbing, bukan dibiarkan','数えるだけでなく、導くコーチ'],
+    'Your first session is one-on-one. We set a simple eight-week plan and check in on it, so you are never guessing.':['Sesi pertamamu one-on-one. Kami susun rencana delapan minggu yang sederhana dan memantaunya, jadi kamu tidak perlu menebak-nebak.','最初のセッションはマンツーマン。シンプルな8週間プランを作り、進み具合も確認するので、迷いません。'],
+    'first session, included':['sesi pertama, sudah termasuk','初回セッション込み'],
+    'Small classes, clean floor':['Kelas kecil, area bersih','少人数、清潔なフロア'],
+    'Classes cap at twelve people and equipment is wiped down between sessions. Room to move, room to learn.':['Kelas dibatasi dua belas orang dan alat dilap setiap selesai sesi. Ruang untuk bergerak, ruang untuk belajar.','クラスは最大12名、器具はセッションごとに拭き上げ。動ける余裕、学べる余裕。'],
+    'people per class, max':['orang per kelas, maks.','クラス定員（最大）'],
+    'Find your first class':['Cari kelas pertamamu','最初のクラスを見つけよう'],
+    'Question {n} of 3':['Pertanyaan {n} dari 3','質問 {n} / 3'],
+    'What is your main goal?':['Apa tujuan utamamu?','いちばんの目標は？'],
+    'Build strength':['Bangun kekuatan','筋力をつける'],'Lift, get stronger':['Angkat beban, makin kuat','持ち上げて、強くなる'],
+    'Lose fat':['Turunkan lemak','脂肪を落とす'],'Burn and feel lighter':['Bakar dan terasa lebih ringan','燃やして身軽に'],
+    'Get fitter for sport':['Lebih bugar untuk olahraga','スポーツ向けに鍛える'],'Stamina and speed':['Stamina dan kecepatan','スタミナとスピード'],
+    'Just get started':['Mulai dulu saja','まずは始めたい'],'No pressure':['Tanpa tekanan','プレッシャーなし'],
+    'How much have you trained?':['Seberapa berpengalaman kamu berlatih?','トレーニング経験は？'],
+    'Never really':['Belum pernah','ほぼ未経験'],'Brand new to this':['Benar-benar baru','まったくの初心者'],
+    'On and off':['Kadang-kadang','断続的'],'Back for another go':['Kembali mencoba lagi','また挑戦したい'],
+    'Regularly':['Rutin','定期的に'],'I know my way around':['Sudah paham alurnya','ひと通り分かっている'],
+    'When can you train?':['Kapan kamu bisa berlatih?','いつ通えますか？'],
+    'Early':['Pagi','早朝'],'Before 09:00':['Sebelum 09:00','9:00まで'],'Lunch':['Siang','ランチタイム'],'11:00 to 15:00':['11:00 sampai 15:00','11:00〜15:00'],
+    'Evening':['Sore','夕方以降'],'After work':['Setelah kerja','仕事のあと'],'Weekends':['Akhir pekan','週末'],'Saturday or Sunday':['Sabtu atau Minggu','土曜か日曜'],
+    'Back':['Kembali','戻る'],'Your first class':['Kelas pertamamu','あなたの最初のクラス'],'Book it on WhatsApp':['Pesan lewat WhatsApp','WhatsAppで予約'],'Start over':['Ulangi','やり直す'],
+    'Start with the free week and your one-on-one welcome session. The All-day plan covers every class when you are ready.':['Mulailah dengan minggu gratis dan sesi perkenalan one-on-one. Paket Sepanjang hari mencakup semua kelas saat kamu siap.','まずは無料の1週間とマンツーマンの体験セッションから。慣れたら、オールデイプランで全クラスに参加できます。'],
+    'The All-day plan covers this class, every other class, and the gym floor.':['Paket Sepanjang hari mencakup kelas ini, semua kelas lain, dan area gym.','オールデイプランなら、このクラスも他のクラスもジムフロアも利用できます。'],
+    'No card needed':['Tanpa kartu','カード不要'],'Max 12 people':['Maks. 12 orang','最大12名'],'Beginner friendly':['Ramah pemula','初心者歓迎'],'Reserve this slot':['Pesan slot ini','この枠を予約'],
+    'Pick a *slot.*':['Pilih *slotmu.*','枠を *選ぼう。*'],
+    'Every class has a simpler option for each movement, so beginners and regulars train side by side.':['Setiap kelas punya opsi yang lebih ringan untuk tiap gerakan, jadi pemula dan yang sudah rutin berlatih bersama.','どのクラスにも、動きごとに簡単な選択肢があるので、初心者も経験者も一緒に動けます。'],
+    'Strength Foundations':['Dasar Kekuatan','筋力ファンデーション'],'Lunch HIIT':['HIIT Makan Siang','ランチHIIT'],'Boxing Basics':['Dasar Tinju','ボクシング基礎'],'Mobility Reset':['Reset Mobilitas','モビリティリセット'],'Early Conditioning':['Kondisioning Pagi','早朝コンディショニング'],'Kettlebell Express':['Kettlebell Ekspres','ケトルベル・エクスプレス'],'Core and Posture':['Core dan Postur','体幹と姿勢'],'Lift Lab':['Lift Lab','リフトラボ'],'Friday Finisher':['Penutup Jumat','フライデー・フィニッシャー'],'Easy Conditioning':['Kondisioning Ringan','イージーコンディショニング'],
+    'Squat, hinge, press, pull. Coach-led.':['Squat, hinge, press, pull. Dipandu pelatih.','スクワット、ヒンジ、プレス、プル。コーチがリード。'],
+    'Back at your desk in 45 minutes.':['Kembali ke meja kerja dalam 45 menit.','45分でデスクに戻れます。'],
+    'Pads and footwork, no experience needed.':['Pukul pad dan footwork, tanpa pengalaman.','ミット打ちとフットワーク。経験不要。'],
+    'Loosen up after a day of sitting.':['Lemaskan badan setelah seharian duduk.','座りっぱなしの一日のあとに、体をほぐす。'],
+    'Rowers, sleds and short intervals.':['Rowing, sled, dan interval singkat.','ローイング、ソリ、短いインターバル。'],
+    'Swings, carries and presses.':['Swing, carry, dan press.','スイング、キャリー、プレス。'],
+    'Build a stronger back and trunk.':['Bangun punggung dan batang tubuh yang lebih kuat.','より強い背中と体幹をつくる。'],
+    'Technique clinic for the big lifts.':['Klinik teknik untuk gerakan angkat besar.','大きなリフトのフォーム改善クリニック。'],
+    'A fun team workout to close the week.':['Latihan tim yang seru untuk menutup minggu.','一週間を締めくくる楽しいチームワークアウト。'],
+    'Loosen up and recover.':['Lemaskan badan dan pulihkan diri.','体をほぐして回復。'],
+    'Low impact. Great for a first class.':['Rendah benturan. Pas untuk kelas pertama.','低負荷。最初のクラスにぴったり。'],
+    '60 min':['60 mnt','60分'],'45 min':['45 mnt','45分'],'30 min':['30 mnt','30分'],
+    'Mon':['Sen','月'],'Tue':['Sel','火'],'Wed':['Rab','水'],'Thu':['Kam','木'],'Fri':['Jum','金'],'Sat':['Sab','土'],'Sun':['Min','日'],
+    'Monday':['Senin','月曜日'],'Tuesday':['Selasa','火曜日'],'Wednesday':['Rabu','水曜日'],'Thursday':['Kamis','木曜日'],'Friday':['Jumat','金曜日'],'Saturday':['Sabtu','土曜日'],'Sunday':['Minggu','日曜日'],
+    'Today':['Hari ini','今日'],
+    'Hi Shiro Gym! I\'d like to reserve {c} on {d} at {t} as part of my free week.':['Halo Shiro Gym! Saya ingin memesan {c} pada hari {d} pukul {t} untuk minggu gratis saya.','こんにちは、Shiro Gymさん！無料の1週間で{d}の{t}に{c}を予約したいです。'],
+    'Hi Shiro Gym! I\'d like the free week. Goal: {g}. Experience: {e}. Best time: {tm}. I\'m eyeing {c} on {d} at {t}.':['Halo Shiro Gym! Saya ingin minggu gratis. Tujuan: {g}. Pengalaman: {e}. Waktu terbaik: {tm}. Saya tertarik {c} pada hari {d} pukul {t}.','こんにちは、Shiro Gymさん！無料の1週間を希望します。目標：{g}。経験：{e}。希望時間帯：{tm}。{d}の{t}の{c}が気になっています。'],
+    'Hi Shiro Gym! I\'d like to start my free week.':['Halo Shiro Gym! Saya ingin memulai minggu gratis.','こんにちは、Shiro Gymさん！無料の1週間を始めたいです。'],
+    'Locations (concept)':['Lokasi (konsep)','店舗（コンセプト）'],
+    'Close to *home.*':['Dekat *rumah.*','家の *近くに。*'],
+    'Four clubs in each city, placed where people already commute. Pick a city, then a club.':['Empat klub di setiap kota, di tempat orang sudah biasa lewat. Pilih kota, lalu klub.','各都市に4つのクラブ。普段の通り道にあります。都市を選び、次にクラブを選んでください。'],
+    'Schematic, not to scale':['Skematik, tidak sesuai skala','模式図・縮尺は不正確'],'Stylized map':['Peta bergaya','スタイライズ地図'],
+    'Jakarta':['Jakarta','ジャカルタ'],'Surabaya':['Surabaya','スラバヤ'],'Bandung':['Bandung','バンドン'],
+    'SCBD side, near the MRT':['Sisi SCBD, dekat MRT','SCBD側、MRT近く'],'Office towers, Rasuna side':['Gedung perkantoran, sisi Rasuna','ラスナ側のオフィス街'],'South Jakarta, residential':['Jakarta Selatan, permukiman','南ジャカルタ、住宅地'],'East of the centre':['Timur pusat kota','中心部の東'],
+    'City centre, old town edge':['Pusat kota, tepi kota lama','市中心部、旧市街のはずれ'],'Near the station':['Dekat stasiun','駅の近く'],'South-west, residential':['Barat daya, permukiman','南西部、住宅地'],'Industrial and campus belt':['Kawasan industri dan kampus','工業地帯とキャンパス周辺'],
+    'North, hills and cafes':['Utara, perbukitan dan kafe','北部、丘とカフェ'],'Central, around the old square':['Pusat, sekitar alun-alun lama','中心部、旧広場の周辺'],'West gate, toll access':['Gerbang barat, akses tol','西の入口、有料道路アクセス'],'South, residential':['Selatan, permukiman','南部、住宅地'],
+    '{city}, {n} clubs':['{city}, {n} klub','{city}・{n}クラブ'],
+    'Shiro Gym {b}, {city}':['Shiro Gym {b}, {city}','Shiro Gym {b}（{city}）'],
+    'Open 05:00 to 23:00 daily. Same schedule and plans as every club.':['Buka 05:00 sampai 23:00 setiap hari. Jadwal dan paket sama di semua klub.','毎日5:00〜23:00営業。スケジュールと料金は全クラブ共通です。'],
+    'See the area on OpenStreetMap':['Lihat area di OpenStreetMap','OpenStreetMapでエリアを見る'],
+    'Plans, rupiah per month':['Paket, rupiah per bulan','料金（月額・円）'],
+    'No joining *fee.*':['Tanpa biaya *pendaftaran.*','入会金は *なし。*'],
+    'Every plan starts with the free seven-day pass and runs month to month. Cancel with seven days notice.':['Setiap paket diawali pass gratis tujuh hari dan berjalan bulanan. Berhenti kapan saja dengan pemberitahuan tujuh hari.','どのプランも7日間の無料パスから始まり、月単位で継続。7日前の連絡で解約できます。'],
+    'Off-peak':['Jam lengang','オフピーク'],
+    'Gym floor, 09:00 to 16:00 on weekdays. Best for shift workers and freelancers.':['Area gym 09:00 sampai 16:00 di hari kerja. Cocok untuk pekerja shift dan freelancer.','ジムフロア、平日9:00〜16:00。シフト勤務やフリーランスの方に。'],
+    'Open gym floor':['Area gym terbuka','ジムフロア利用'],'Welcome session':['Sesi perkenalan','ウェルカムセッション'],
+    'Most popular':['Paling populer','人気No.1'],
+    'All-day':['Sepanjang hari','オールデイ'],
+    'Gym floor any time, plus every class on the schedule.':['Area gym kapan saja, ditambah semua kelas di jadwal.','いつでもジムフロア、さらにスケジュール上の全クラス。'],
+    'Open gym floor, 05:00 to 23:00':['Area gym terbuka 05:00 sampai 23:00','ジムフロア利用 5:00〜23:00'],'All group classes':['Semua kelas grup','全グループクラス'],'Coached first session':['Sesi pertama dengan pelatih','コーチ付き初回セッション'],
+    'Train together':['Latihan berdua','ふたりで通う'],
+    'All-day access for two people on one plan. Bring a partner, a sibling or a coworker.':['Akses sepanjang hari untuk dua orang dalam satu paket. Ajak pasangan, saudara, atau rekan kerja.','1つのプランで2名がオールデイ利用。パートナー、兄弟、同僚と一緒にどうぞ。'],
+    'Everything in All-day':['Semua isi Sepanjang hari','オールデイの全内容'],'Two members, one bill':['Dua anggota, satu tagihan','2名で1請求'],
+    'Start free week':['Mulai minggu gratis','無料の1週間を始める'],
+    'Questions':['Pertanyaan','よくある質問'],
+    'Before you *walk in.*':['Sebelum kamu *datang.*','来店する *前に。*'],
+    'Do I need a card for the free week?':['Perlu kartu untuk minggu gratis?','無料期間にカードは必要ですか？'],
+    'No. Message us on WhatsApp, pick a time, and walk in. You only pay if you decide to join.':['Tidak. Kirim pesan lewat WhatsApp, pilih jam, lalu datang. Kamu baru membayar kalau memutuskan bergabung.','いいえ。WhatsAppでメッセージを送り、時間を選んで来店するだけ。入会を決めたときだけお支払いください。'],
+    'I have never trained before. Is that okay?':['Saya belum pernah berlatih. Tidak apa-apa?','運動経験がありません。大丈夫ですか？'],
+    'Yes, most of our members started that way. Your first session is one-on-one, and every class has a simpler option for each movement.':['Tidak apa-apa, kebanyakan anggota kami mulai dari nol. Sesi pertamamu one-on-one, dan setiap kelas punya opsi yang lebih ringan untuk tiap gerakan.','はい、多くの会員がそこから始めています。初回はマンツーマンで、どのクラスも動きごとに簡単な選択肢があります。'],
+    'Can I freeze my membership?':['Bisakah keanggotaan dibekukan?','会員資格を一時停止できますか？'],
+    'You can pause for up to 30 days a year for travel, illness or exams. Message the front desk before your next billing date.':['Bisa, hingga 30 hari per tahun untuk perjalanan, sakit, atau ujian. Kabari resepsionis sebelum tanggal tagihan berikutnya.','旅行、病気、試験などで年に最大30日まで休会できます。次回の請求日前にフロントへご連絡ください。'],
+    'Is there a joining fee or a long contract?':['Ada biaya pendaftaran atau kontrak panjang?','入会金や長期契約はありますか？'],
+    'No joining fee. All plans run month to month, so you can cancel any time with seven days notice.':['Tanpa biaya pendaftaran. Semua paket berjalan bulanan, jadi kamu bisa berhenti kapan saja dengan pemberitahuan tujuh hari.','入会金はありません。全プラン月単位で、7日前の連絡でいつでも解約できます。'],
+    'See you at *05:00.*':['Sampai jumpa pukul *05:00.*','5:00に *会いましょう。*'],
+    'Start my free week on WhatsApp':['Mulai minggu gratisku lewat WhatsApp','WhatsAppで無料の1週間を始める'],
+    'We reply within the hour during opening times and book your coached session.':['Kami membalas dalam satu jam selama jam buka dan mengatur sesi pertamamu dengan pelatih.','営業時間内は1時間以内に返信し、コーチ付きセッションを予約します。'],
+    'Shiro Gym is a concept project by Shiro Labs, made to show a landing page build. It is not a real business, and the prices, classes and hours are illustrative.':['Shiro Gym adalah proyek konsep dari Shiro Labs untuk menunjukkan pembuatan landing page. Ini bukan bisnis nyata, dan harga, kelas, serta jam buka hanya ilustrasi.','Shiro GymはShiro Labsによるコンセプトプロジェクトで、ランディングページ制作の見本です。実在のビジネスではなく、料金・クラス・営業時間は架空のものです。'],
+    'Shiro Gym | Start strong in Surabaya (Concept)':['Shiro Gym | Mulai kuat di Surabaya (Konsep)','Shiro Gym | スラバヤで強く始めよう（コンセプト）'],
+    'Start strong.':['Mulai kuat.','強く始めよう。']
+  };
+  var LANGS=['en','id','ja'], lang='en';
+  try{var sv=localStorage.getItem('sg-lang'); if(LANGS.indexOf(sv)>-1) lang=sv; else {var nl=(navigator.language||'en').toLowerCase().slice(0,2); if(nl==='id'||nl==='ja') lang=nl;}}catch(e){}
+  var ENO={'Plans, rupiah per month':'Plans, USD per month'};
+  var PRICES={349000:{en:21,ja:3200},499000:{en:30,ja:4500},899000:{en:54,ja:8200}};
+  var CUR={en:{pre:'$',unit:'USD',loc:'en-US'},ja:{pre:'¥',unit:'JPY',loc:'ja-JP'},id:{pre:'',unit:'RP',loc:'id-ID'}};
+  function money(idr){var c=CUR[lang],v=lang==='id'?idr:PRICES[idr][lang];return {v:v,pre:c.pre,unit:c.unit,txt:c.pre+new Intl.NumberFormat(c.loc).format(v)};}
+  var NOTE={en:'Prices in US dollars are approximate conversions from rupiah, the local currency.',ja:'円表示は現地通貨ルピアからの概算換算です。',id:''};
+  function renderPrices(){
+    $$('.pr[data-idr]').forEach(function(el){var m=money(+el.dataset.idr);el.innerHTML=m.txt+'<small>'+m.unit+'</small>';});
+    var n=$('#pnote'); if(n) n.textContent=NOTE[lang];
+  }
+  function tr(k){ if(lang==='en') return ENO.hasOwnProperty(k)?ENO[k]:k; var v=DICT[k]; return (v&&v[lang==='id'?0:1])||k; }
+  function fmt(s,o){return s.replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m;});}
+
+  /* ---------- Jakarta time ---------- */
+  function jkt(){
+    var o={};
+    new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short'}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
+    var h=(+o.hour)%24;
+    return {h:h,wd:(o.weekday||'Mon').slice(0,3)};
+  }
+  function status(){
+    var n=jkt(), open=n.h>=5&&n.h<23;
+    $('#dot').className='dot'+(open?' on':'');
+    $('#stText').textContent=open?tr('Open now'):tr('Opens 05:00');
+  }
+  status(); setInterval(status,30000);
+
+  /* ---------- data ---------- */
+  var SCHED={
+    Mon:[['06:00','Strength Foundations','Squat, hinge, press, pull. Coach-led.','60 min'],['12:15','Lunch HIIT','Back at your desk in 45 minutes.','30 min'],['18:30','Boxing Basics','Pads and footwork, no experience needed.','60 min'],['19:45','Mobility Reset','Loosen up after a day of sitting.','45 min']],
+    Tue:[['05:30','Early Conditioning','Rowers, sleds and short intervals.','45 min'],['12:15','Kettlebell Express','Swings, carries and presses.','30 min'],['18:30','Strength Foundations','Squat, hinge, press, pull. Coach-led.','60 min'],['20:00','Core and Posture','Build a stronger back and trunk.','45 min']],
+    Wed:[['06:00','Boxing Basics','Pads and footwork, no experience needed.','60 min'],['12:15','Lunch HIIT','Back at your desk in 45 minutes.','30 min'],['18:30','Lift Lab','Technique clinic for the big lifts.','60 min'],['19:45','Mobility Reset','Loosen up after a day of sitting.','45 min']],
+    Thu:[['05:30','Early Conditioning','Rowers, sleds and short intervals.','45 min'],['12:15','Kettlebell Express','Swings, carries and presses.','30 min'],['18:30','Strength Foundations','Squat, hinge, press, pull. Coach-led.','60 min']],
+    Fri:[['06:00','Lift Lab','Technique clinic for the big lifts.','60 min'],['12:15','Lunch HIIT','Back at your desk in 45 minutes.','30 min'],['18:00','Friday Finisher','A fun team workout to close the week.','45 min']],
+    Sat:[['08:00','Strength Foundations','Squat, hinge, press, pull. Coach-led.','60 min'],['09:30','Boxing Basics','Pads and footwork, no experience needed.','60 min'],['11:00','Mobility Reset','Loosen up and recover.','45 min']],
+    Sun:[['08:00','Easy Conditioning','Low impact. Great for a first class.','45 min'],['09:30','Core and Posture','Build a stronger back and trunk.','45 min']]
+  };
+  var DAYS=Object.keys(SCHED), today=jkt().wd; if(!SCHED[today]) today='Mon';
+  var FULL={Mon:'Monday',Tue:'Tuesday',Wed:'Wednesday',Thu:'Thursday',Fri:'Friday',Sat:'Saturday',Sun:'Sunday'};
+
+  /* ---------- schedule picker ---------- */
+  var selDay=today, selIdx=0;
+  (function(){
+    var h=jkt().h, list=SCHED[today], k=0;
+    for(var i=0;i<list.length;i++){ if(+list[i][0].slice(0,2)>=h){k=i;break;} k=0; }
+    selIdx=k;
+  })();
+  var dstrip=$('#dstrip'), slotsEl=$('#slots'), detEl=$('#det');
+  DAYS.forEach(function(d){
+    var b=document.createElement('button');
+    b.type='button'; b.className='dbtn'; b.dataset.d=d;
+    b.addEventListener('click',function(){selDay=d;selIdx=0;renderSched();});
+    dstrip.appendChild(b);
+  });
+  function renderDays(){ $$('.dbtn',dstrip).forEach(function(b){var d=b.dataset.d; b.innerHTML=tr(d)+(d===today?'<span class="td" title="'+tr('Today')+'"></span>':'');}); }
+  renderDays();
+  function renderDet(){
+    var c=SCHED[selDay][selIdx];
+    detEl.innerHTML='<span class="lbl">'+tr(FULL[selDay])+', '+c[0]+' WIB</span><h3 class="disp dn flash">'+tr(c[1])+'</h3><p class="flash">'+tr(c[2])+'</p><div class="row"><span class="chip l">'+tr(c[3])+'</span><span class="chip">'+tr('Max 12 people')+'</span><span class="chip">'+tr('Beginner friendly')+'</span></div><a class="btn btn-lime" target="_blank" rel="noopener" href="'+wa(fmt(tr("Hi Shiro Gym! I'd like to reserve {c} on {d} at {t} as part of my free week."),{c:tr(c[1]),d:tr(FULL[selDay]),t:c[0]}))+'">'+tr('Reserve this slot')+' '+ARROW+'</a>';
+  }
+  function renderSched(){
+    $$('.dbtn',dstrip).forEach(function(b){b.setAttribute('aria-pressed',b.dataset.d===selDay?'true':'false');});
+    slotsEl.innerHTML=SCHED[selDay].map(function(c,i){
+      return '<button type="button" class="slot" style="--i:'+i+'" data-i="'+i+'" aria-pressed="'+(i===selIdx)+'"><span class="t">'+c[0]+'</span><span class="n">'+tr(c[1])+'</span><span class="m">'+tr(c[3])+'</span></button>';
+    }).join('');
+    $$('.slot',slotsEl).forEach(function(b){b.addEventListener('click',function(){selIdx=+b.dataset.i;$$('.slot',slotsEl).forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});renderDet();});});
+    renderDet();
+  }
+  renderSched();
+
+  /* ---------- quiz ---------- */
+  var Q=[
+    {k:'goal',q:'What is your main goal?',o:[['strength','Build strength','Lift, get stronger'],['fat','Lose fat','Burn and feel lighter'],['sport','Get fitter for sport','Stamina and speed'],['start','Just get started','No pressure']]},
+    {k:'exp',q:'How much have you trained?',o:[['never','Never really','Brand new to this'],['onoff','On and off','Back for another go'],['reg','Regularly','I know my way around']]},
+    {k:'time',q:'When can you train?',o:[['early','Early','Before 09:00'],['lunch','Lunch','11:00 to 15:00'],['evening','Evening','After work'],['weekend','Weekends','Saturday or Sunday']]}
+  ];
+  var GOALN={strength:'Build strength',fat:'Lose fat',sport:'Get fitter for sport',start:'Just get started'};
+  var EXPN={never:'Never really',onoff:'On and off',reg:'Regularly'};
+  var TIMEN={early:'Early',lunch:'Lunch',evening:'Evening',weekend:'Weekends'};
+  var GC={strength:['Strength Foundations','Lift Lab'],fat:['Lunch HIIT','Kettlebell Express','Friday Finisher'],sport:['Boxing Basics','Early Conditioning'],start:['Easy Conditioning','Mobility Reset','Core and Posture']};
+  var fresh=false, step=0, ans={}, qbody=$('#qbody'), prog=$$('#prog i');
+  function fits(day,time,w){
+    var h=+time.slice(0,2);
+    if(w==='weekend') return day==='Sat'||day==='Sun';
+    if(w==='early') return h<9;
+    if(w==='lunch') return h>=11&&h<15;
+    return h>=17&&h<22;
+  }
+  function pick(){
+    var order=[], i0=DAYS.indexOf(today); for(var i=0;i<7;i++) order.push(DAYS[(i0+i)%7]);
+    var tries=[true,false], t, d, j, c;
+    for(t=0;t<2;t++){
+      for(d=0;d<order.length;d++){
+        for(j=0;j<SCHED[order[d]].length;j++){
+          c=SCHED[order[d]][j];
+          if(GC[ans.goal].indexOf(c[1])>-1 && (!tries[t]||fits(order[d],c[0],ans.time))) return {day:order[d],c:c};
+        }
+      }
+    }
+    return {day:today,c:SCHED[today][0]};
+  }
+  function fitName(){
+    var nm=$('.res .nm'), rl=$('.res .rl'); if(!nm||!rl) return;
+    if(lang==='ja'){nm.style.fontSize=Math.min(84,Math.max(28,rl.clientWidth/6.5))+'px';return;}
+    nm.style.fontSize='100px';
+    var mw=0; $$('.w2',nm).forEach(function(w){mw=Math.max(mw,w.getBoundingClientRect().width);});
+    var cw=rl.clientWidth; if(!mw||!cw) return;
+    nm.style.fontSize=Math.max(20,Math.min(112,100*cw/mw*.97))+'px';
+  }
+  window.addEventListener('resize',fitName);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitName);
+  function celebrate(){
+    var stamp=$('#stamp'), num=$('#stNum'), quiz=$('#quiz'); if(!stamp||!quiz) return;
+    var t0=performance.now()+350, D=1300, m0=money(499000), nf=new Intl.NumberFormat(CUR[lang].loc);
+    (function tick(now){
+      var k=clamp((now-t0)/D,0,1), e=1-Math.pow(1-k,3), v=m0.v*(1-e);
+      v=lang==='id'?Math.round(v/1000)*1000:Math.round(v);
+      if(!num.isConnected) return;
+      num.textContent=CUR[lang].pre+nf.format(v);
+      if(k<1) requestAnimationFrame(tick); else stamp.classList.add('done');
+    })(performance.now());
+    var cv=document.createElement('canvas'); cv.className='cf'; quiz.appendChild(cv);
+    var qr=quiz.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2), W=qr.width, H=qr.height;
+    cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
+    var g=cv.getContext('2d'); g.setTransform(dpr,0,0,dpr,0,0);
+    var sr=stamp.getBoundingClientRect(), sx=sr.left-qr.left+sr.width/2, sy=sr.top-qr.top+sr.height/2;
+    var COL=['#c6ff3d','#c6ff3d','#f2f3f5','#e4ff9a','#8fd400','#ffffff'], P=[];
+    function burst(x,y,n,spread,dir,pow,delay){
+      for(var i=0;i<n;i++){var a=dir+(Math.random()-.5)*spread, sp=pow*(.35+Math.random()*.75);
+        P.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,r:Math.random()*6.28,vr:(Math.random()-.5)*12,w:6+Math.random()*9,h:4+Math.random()*7,c:COL[(Math.random()*COL.length)|0],t:Math.random()<.22?1:0,d:delay+Math.random()*.12,life:2.8+Math.random()*1.2,age:0});}
+    }
+    burst(sx,sy,90,Math.PI*2,0,820,1.35);
+    burst(0,H,60,.9,-Math.PI/3,1300,1.5);
+    burst(W,H,60,.9,-Math.PI*2/3,1300,1.5);
+    burst(W/2,0,40,1.2,Math.PI/2,420,1.75);
+    var last=performance.now();
+    (function loop(now){
+      var dt=Math.min((now-last)/1000,.05); last=now; g.clearRect(0,0,W,H); var alive=0;
+      P.forEach(function(p){
+        if(p.d>0){p.d-=dt;alive++;return;}
+        p.age+=dt; if(p.age>p.life) return; alive++;
+        p.vx*=Math.pow(.18,dt); p.vy=p.vy*Math.pow(.18,dt)+620*dt; p.x+=p.vx*dt; p.y+=p.vy*dt; p.r+=p.vr*dt;
+        var al=p.age>p.life-.7?(p.life-p.age)/.7:1; g.globalAlpha=Math.max(al,0); g.fillStyle=p.c;
+        g.save(); g.translate(p.x,p.y); g.rotate(p.r);
+        if(p.t){g.beginPath();g.arc(0,0,p.h*.7,0,6.283);g.fill();} else {g.scale(1,Math.abs(Math.cos(p.age*7+p.r)));g.fillRect(-p.w/2,-p.h/2,p.w,p.h);}
+        g.restore();
+      });
+      if(alive) requestAnimationFrame(loop); else cv.remove();
+    })(performance.now());
+  }
+  function renderQ(){
+    prog.forEach(function(p,i){p.className=i<=Math.min(step,2)&&step<3?'on':(step>=3?'on':'');});
+    if(step<3){
+      var q=Q[step];
+      qbody.innerHTML='<div class="qstep"><span class="lbl">'+fmt(tr('Question {n} of 3'),{n:step+1})+'</span><h3 class="disp qh">'+tr(q.q)+'</h3><div class="opts">'+q.o.map(function(o){return '<button type="button" class="opt" data-v="'+o[0]+'"><span>'+tr(o[1])+'<small>'+tr(o[2])+'</small></span>'+ARROW+'</button>';}).join('')+'</div>'+(step>0?'<button type="button" class="back" id="qback">'+tr('Back')+'</button>':'')+'</div>';
+      $$('.opt',qbody).forEach(function(b){b.addEventListener('click',function(){ans[q.k]=b.dataset.v;step++;if(step===3)fresh=true;renderQ();});});
+      var bk=$('#qback'); if(bk) bk.addEventListener('click',function(){step--;renderQ();});
+    } else {
+      var r=pick(), c=r.c;
+      var msg=fmt(tr("Hi Shiro Gym! I'd like the free week. Goal: {g}. Experience: {e}. Best time: {tm}. I'm eyeing {c} on {d} at {t}."),{g:tr(GOALN[ans.goal]),e:tr(EXPN[ans.exp]),tm:tr(TIMEN[ans.time]),c:tr(c[1]),d:tr(FULL[r.day]),t:c[0]});
+      var planTxt=tr((ans.exp==='never')?'Start with the free week and your one-on-one welcome session. The All-day plan covers every class when you are ready.':'The All-day plan covers this class, every other class, and the gym floor.');
+      var isNew=fresh; fresh=false;
+      var words=tr(c[1]).split(' ').map(function(w,i){return '<span class="w2" style="--i:'+i+'">'+w+'</span>';}).join('');
+      var ringTxt=(tr('First week free')+' \u2022 '+tr('No card needed')+' \u2022 ').toUpperCase();
+      var chips=[tr(FULL[r.day])+' '+c[0],tr(c[3]),tr('Max 12 people')].map(function(t,i){return '<span class="chip'+(i===0?' l':'')+'" style="--i:'+i+'">'+t+'</span>';}).join('');
+      qbody.innerHTML='<div class="res '+(isNew?'go':'still')+'"><span class="lbl">'+tr('Your first class')+'</span>'
+        +'<div class="stamp" id="stamp" role="img" aria-label="'+tr('First week free')+', '+CUR[lang].pre+'0"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="sp" d="M50 50 m-43 0 a43 43 0 1 1 86 0 a43 43 0 1 1 -86 0"/></defs><text><textPath href="#sp" textLength="266" lengthAdjust="spacing">'+ringTxt+'</textPath></text></svg><div class="core"><small>'+money(499000).unit+'</small><b id="stNum">'+(isNew&&!RM?money(499000).txt:CUR[lang].pre+'0')+'</b></div></div>'
+        +'<div class="rl"><h3 class="disp nm" aria-label="'+tr(c[1])+'">'+words+'</h3></div>'
+        +'<div class="meta">'+chips+'</div><div class="perf" aria-hidden="true"></div>'
+        +'<div class="bot"><p>'+tr(c[2])+' '+planTxt+'</p><div class="side"><a class="btn btn-lime" target="_blank" rel="noopener" href="'+wa(msg)+'">'+tr('Book it on WhatsApp')+' '+ARROW+'</a><button type="button" class="back" id="qredo">'+tr('Start over')+'</button></div></div></div>';
+      fitName();
+      if(isNew&&!RM) celebrate();
+      $('#qredo').addEventListener('click',function(){step=0;ans={};renderQ();});
+      var fin=$('#wa-final'); if(fin) fin.href=wa(msg);
+    }
+  }
+  renderQ();
+  function setFinalWa(){var finA=$('#wa-final'); if(finA && step<3) finA.href=wa(tr("Hi Shiro Gym! I'd like to start my free week."));}
+  setFinalWa();
+
+  /* ---------- FAQ ---------- */
+  var FAQ=[
+    ['Do I need a card for the free week?','No. Message us on WhatsApp, pick a time, and walk in. You only pay if you decide to join.'],
+    ['I have never trained before. Is that okay?','Yes, most of our members started that way. Your first session is one-on-one, and every class has a simpler option for each movement.'],
+    ['Can I freeze my membership?','You can pause for up to 30 days a year for travel, illness or exams. Message the front desk before your next billing date.'],
+    ['Is there a joining fee or a long contract?','No joining fee. All plans run month to month, so you can cancel any time with seven days notice.']
+  ];
+  var fl=$('#faqs'), faqOpen=0;
+  function renderFaq(){
+    fl.innerHTML=FAQ.map(function(f,i){
+      return '<div class="fq'+(i===faqOpen?' open':'')+'"><button type="button" aria-expanded="'+(i===faqOpen)+'" aria-controls="fa'+i+'" id="fb'+i+'"><span class="n">0'+(i+1)+'</span><span>'+tr(f[0])+'</span><span class="pm" aria-hidden="true"></span></button><div class="fa" id="fa'+i+'" role="region" aria-labelledby="fb'+i+'"><div class="fi"><p>'+tr(f[1])+'</p></div></div></div>';
+    }).join('');
+    $$('.fq button',fl).forEach(function(b,i){
+      b.addEventListener('click',function(){
+        var it=b.parentNode, will=!it.classList.contains('open');
+        $$('.fq',fl).forEach(function(x){x.classList.remove('open');$('button',x).setAttribute('aria-expanded','false');});
+        faqOpen=-1;
+        if(will){it.classList.add('open');b.setAttribute('aria-expanded','true');faqOpen=i;}
+      });
+    });
+  }
+  renderFaq();
+
+  /* ---------- word split ---------- */
+  $$('[data-split]').forEach(function(el){el.dataset.k=el.getAttribute('data-split');});
+  function splitAll(){
+  $$('[data-split]').forEach(function(el){
+    var src=tr(el.dataset.k), plain=src.replace(/\*/g,'');
+    el.setAttribute('data-split',src);
+    el.setAttribute('aria-label',plain);
+    var out='', acc=false, i=0;
+    src.split(' ').forEach(function(w){
+      var open=w.charAt(0)==='*', close=w.charAt(w.length-1)==='*';
+      if(open) acc=true;
+      var word=w.replace(/\*/g,'');
+      out+='<span class="w'+(acc?' a':'')+'" style="--i:'+(i++)+'" aria-hidden="true">'+(acc?'<em class="a">'+word+'</em>':word)+'</span> ';
+      if(close) acc=false;
+    });
+    el.innerHTML=out;
+  });
+  }
+  splitAll();
+
+  /* ---------- locations map ---------- */
+  (function(){
+    var CITIES=[
+      {k:'Jakarta',b:[-6.30,106.77,-6.15,106.90],c:[-6.2250,106.8250],br:[
+        ['Sudirman','SCBD side, near the MRT',-6.2260,106.8085],
+        ['Kuningan','Office towers, Rasuna side',-6.2300,106.8330],
+        ['Kemang','South Jakarta, residential',-6.2740,106.8140],
+        ['Tebet','East of the centre',-6.2260,106.8540]]},
+      {k:'Surabaya',b:[-7.34,112.68,-7.20,112.80],c:[-7.2750,112.7400],br:[
+        ['Tunjungan','City centre, old town edge',-7.2630,112.7380],
+        ['Gubeng','Near the station',-7.2750,112.7500],
+        ['Darmo','South-west, residential',-7.2900,112.7330],
+        ['Rungkut','Industrial and campus belt',-7.3250,112.7750]]},
+      {k:'Bandung',b:[-6.97,107.55,-6.86,107.68],c:[-6.9100,107.6100],br:[
+        ['Dago','North, hills and cafes',-6.8850,107.6130],
+        ['Braga','Central, around the old square',-6.9170,107.6090],
+        ['Pasteur','West gate, toll access',-6.8900,107.5950],
+        ['Buah Batu','South, residential',-6.9560,107.6330]]}];
+    var svg=$('#mapsvg'),tabsEl=$('#mtabs'),listEl=$('#blist'),detEl=$('#bdet'),capEl=$('#mcap');
+    if(!svg||!tabsEl)return;
+    var W=1000,H=720,ci=0,bi=0,NS='http://www.w3.org/2000/svg';
+    function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function fit(C){var cl=Math.cos((C.b[0]+C.b[2])/2*Math.PI/180),pts=C.br.map(function(q){return [q[3]*cl,q[2]];}).concat([[C.c[1]*cl,C.c[0]]]);var x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;pts.forEach(function(p){x0=Math.min(x0,p[0]);x1=Math.max(x1,p[0]);y0=Math.min(y0,p[1]);y1=Math.max(y1,p[1]);});var pw=300,ph=260,sc=Math.min((W-pw)/Math.max(x1-x0,1e-6),(H-ph)/Math.max(y1-y0,1e-6));C.f={cl:cl,x0:x0,y1:y1,sc:sc,ox:(W-(x1-x0)*sc)/2,oy:(H-(y1-y0)*sc)/2+6};}
+    function proj(C,la,lo){var f=C.f;return [f.ox+(lo*f.cl-f.x0)*f.sc,f.oy+(f.y1-la)*f.sc];}
+    function rnd(seed){var x=seed;return function(){x=(x*16807)%2147483647;return x/2147483647;};}
+    function draw(){
+      var C=CITIES[ci],r=rnd(7+ci*31),o='';fit(C);
+      for(var x=0;x<=W;x+=50)o+='<line class="gl" x1="'+x+'" y1="0" x2="'+x+'" y2="'+H+'"/>';
+      for(var y=0;y<=H;y+=50)o+='<line class="gl" x1="0" y1="'+y+'" x2="'+W+'" y2="'+y+'"/>';
+      for(var i=0;i<46;i++){var bx=r()*W,by=r()*H,bw=24+r()*70,bh=18+r()*50;o+='<rect class="blk" x="'+bx.toFixed(0)+'" y="'+by.toFixed(0)+'" width="'+bw.toFixed(0)+'" height="'+bh.toFixed(0)+'" rx="6"/>';}
+      var cc=proj(C,C.c[0],C.c[1]),P=C.br.map(function(q){return proj(C,q[2],q[3]);});
+      for(var j=0;j<14;j++){var a=r()*Math.PI*2,l=180+r()*420;o+='<path class="rd2" d="M'+cc[0].toFixed(0)+' '+cc[1].toFixed(0)+' Q'+(cc[0]+Math.cos(a+.6)*l*.55).toFixed(0)+' '+(cc[1]+Math.sin(a+.6)*l*.55).toFixed(0)+' '+(cc[0]+Math.cos(a)*l).toFixed(0)+' '+(cc[1]+Math.sin(a)*l).toFixed(0)+'"/>';}
+      [150,290,430].forEach(function(rr){o+='<circle class="hub" cx="'+cc[0].toFixed(0)+'" cy="'+cc[1].toFixed(0)+'" r="'+rr+'"/>';});
+      P.forEach(function(p,n){var mx=(p[0]+cc[0])/2+(n%2?40:-40),my=(p[1]+cc[1])/2+(n<2?-34:34);o+='<path class="rd" d="M'+cc[0].toFixed(0)+' '+cc[1].toFixed(0)+' Q'+mx.toFixed(0)+' '+my.toFixed(0)+' '+p[0].toFixed(0)+' '+p[1].toFixed(0)+'"/>';});
+      C.br.forEach(function(q,n){var p=P[n],right=p[0]<W*.62,tx=right?p[0]+30:p[0]-30,dy=7;
+        P.forEach(function(o2,m){if(m<n&&Math.abs(o2[1]-p[1])<46&&Math.abs(o2[0]-p[0])<230)dy=(dy===7?-20:36);});
+        o+='<g class="pin" tabindex="0" role="button" data-i="'+n+'" aria-pressed="'+(n===bi)+'" aria-label="'+esc(q[0])+'"><circle class="pulse" cx="'+p[0].toFixed(0)+'" cy="'+p[1].toFixed(0)+'" r="9"/><circle class="dot" cx="'+p[0].toFixed(0)+'" cy="'+p[1].toFixed(0)+'" r="9"/><text class="tag" x="'+tx.toFixed(0)+'" y="'+(p[1]+dy).toFixed(0)+'" text-anchor="'+(right?'start':'end')+'">'+esc(q[0])+'</text></g>';});
+      svg.innerHTML=o;
+      $$('.pin',svg).forEach(function(g){g.addEventListener('click',function(){pick(+g.dataset.i);});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(+g.dataset.i);}});});
+      capEl.textContent=fmt(tr('{city}, {n} clubs'),{city:tr(C.k),n:C.br.length});
+    }
+    function lists(){
+      var C=CITIES[ci];
+      listEl.innerHTML=C.br.map(function(q,n){return '<button type="button" class="bcard" data-i="'+n+'" aria-pressed="'+(n===bi)+'"><span class="bn">0'+(n+1)+'</span><b>'+esc(q[0])+'</b><span>'+esc(tr(q[1]))+'</span></button>';}).join('');
+      $$('.bcard',listEl).forEach(function(b){b.addEventListener('click',function(){pick(+b.dataset.i);});});
+      var q=C.br[bi],u='https://www.openstreetmap.org/?mlat='+q[2]+'&mlon='+q[3]+'#map=16/'+q[2]+'/'+q[3];
+      detEl.innerHTML='<span class="lbl">'+esc(fmt(tr('Shiro Gym {b}, {city}'),{b:q[0],city:tr(C.k)}))+'</span><p>'+tr('Open 05:00 to 23:00 daily. Same schedule and plans as every club.')+'</p><a class="ol" target="_blank" rel="noopener" href="'+u+'">'+tr('See the area on OpenStreetMap')+'</a>';
+    }
+    function pick(n){bi=n;$$('.pin',svg).forEach(function(g){g.setAttribute('aria-pressed',+g.dataset.i===n?'true':'false');});lists();}
+    function tabs(){
+      tabsEl.innerHTML=CITIES.map(function(c,n){return '<button type="button" class="mtab" data-i="'+n+'" aria-pressed="'+(n===ci)+'">'+tr(c.k)+'</button>';}).join('');
+      $$('.mtab',tabsEl).forEach(function(b){b.addEventListener('click',function(){ci=+b.dataset.i;bi=0;tabs();draw();lists();});});
+    }
+    tabs();draw();lists();
+    window.__mapRender=function(){tabs();draw();lists();};
+  })();
+
+  /* ---------- reveals ---------- */
+  var io=null;
+  function startReveals(){
+    var els=$$('.rv,[data-split]');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  /* ---------- hero flex letters ---------- */
+  var letters=[], flexRows=$$('[data-flex]');
+  flexRows.forEach(function(row){row.dataset.k=row.textContent;});
+  function buildLetters(){
+    letters.length=0;
+    flexRows.forEach(function(row,ri){
+      var txt=tr(row.dataset.k); row.textContent='';
+      for(var i=0;i<txt.length;i++){
+        var s=document.createElement('span'); s.className='ch'; s.textContent=txt.charAt(i); s.style.setProperty('--i',(ri*5+i)); row.appendChild(s);
+        letters.push({el:s,w:640,x:80,i:ri*5+i});
+      }
+    });
+  }
+  buildLetters();
+  var ptr={x:-9999,y:-9999,seen:false,lx:0,ly:0};
+  var act=0, scrollV=0, lastY=window.scrollY;
+  window.addEventListener('pointermove',function(e){
+    if(ptr.seen){var dx=e.clientX-ptr.lx,dy=e.clientY-ptr.ly; act+=Math.min(Math.sqrt(dx*dx+dy*dy)/90,.4);}
+    ptr.x=e.clientX;ptr.y=e.clientY;ptr.lx=e.clientX;ptr.ly=e.clientY;ptr.seen=true;
+  },{passive:true});
+  window.addEventListener('scroll',function(){var y=window.scrollY;scrollV+=(y-lastY);lastY=y;act+=Math.min(Math.abs(scrollV)/120,.5);},{passive:true});
+  document.addEventListener('pointerleave',function(){ptr.x=-9999;ptr.y=-9999;});
+
+  /* ---------- plate ---------- */
+  (function(){
+    var g=$('#ticks'), s='';
+    for(var i=0;i<48;i++){var a=i/48*Math.PI*2, r1=158, r2=(i%4===0)?176:168;
+      s+='<line x1="'+(200+Math.cos(a)*r1)+'" y1="'+(200+Math.sin(a)*r1)+'" x2="'+(200+Math.cos(a)*r2)+'" y2="'+(200+Math.sin(a)*r2)+'" stroke="rgba(242,243,245,'+((i%4===0)?.5:.22)+')" stroke-width="2"/>';}
+    g.innerHTML=s; g.style.transformOrigin='200px 200px';
+  })();
+
+  /* ---------- ECG ---------- */
+  var ecg=$('#ecg'), ectx=ecg.getContext('2d'), EW=0, EH=0, beats=0, bpm=62, bpmEl=$('#bpm'), bpmT=0;
+  function resizeE(){
+    var r=ecg.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2);
+    EW=r.width;EH=r.height;ecg.width=Math.round(EW*dpr);ecg.height=Math.round(EH*dpr);ectx.setTransform(dpr,0,0,dpr,0,0);
+    if(RM) drawE();
+  }
+  function g(x,m,s,a){var d=(x-m)/s;return a*Math.exp(-d*d);}
+  function wave(p){return g(p,.18,.035,.14)+g(p,.36,.011,-.16)+g(p,.385,.012,1)+g(p,.41,.013,-.28)+g(p,.62,.06,.26);}
+  function drawE(){
+    var SP=300, base=EH*.66, A=EH*.4*(.7+Math.min(act,1)*.5), y=0, x;
+    ectx.clearRect(0,0,EW,EH);
+    var gr=ectx.createLinearGradient(0,0,EW,0);
+    gr.addColorStop(0,'rgba(198,255,61,0)');gr.addColorStop(.55,'rgba(198,255,61,.45)');gr.addColorStop(1,'rgba(198,255,61,1)');
+    ectx.strokeStyle=gr;ectx.lineWidth=2.5;ectx.lineJoin='round';ectx.shadowColor='rgba(198,255,61,.8)';ectx.shadowBlur=14;
+    ectx.beginPath();
+    for(x=0;x<=EW;x+=2){
+      var p=(((beats-(EW-x)/SP)%1)+1)%1; y=base-wave(p)*A;
+      if(x===0) ectx.moveTo(x,y); else ectx.lineTo(x,y);
+    }
+    ectx.stroke();
+    ectx.shadowBlur=18;ectx.fillStyle='#c6ff3d';ectx.beginPath();ectx.arc(EW-3,y,5,0,Math.PI*2);ectx.fill();
+  }
+
+  /* ---------- marquee ---------- */
+  var mqs=$$('.mq').map(function(el){return {el:el,dir:+el.dataset.dir,off:0,w:0};});
+  function measureMq(){mqs.forEach(function(m){m.w=m.el.firstElementChild.offsetWidth;});}
+  var MQ=[['First week free','No joining fee','Coached start','Open 05:00 to 23:00'],['Strength','Boxing','HIIT','Kettlebells','Mobility']];
+  function buildMq(){
+    mqs.forEach(function(m,r){
+      var set='<div class="set">'+MQ[r].map(function(t,i){var o=(r===0?i%2===1:i%2===0);return '<span'+(o?' class="o"':'')+'>'+tr(t)+'</span><span class="s">/</span>';}).join('')+'</div>';
+      m.el.innerHTML=set+set;
+    });
+    measureMq();
+  }
+  buildMq();
+  /* ---------- language ---------- */
+    function tagStatic(){
+    $$('body *').forEach(function(el){
+      if(el.closest('script,svg,.mqs,[data-flex],[data-split],.lang')||el.children.length>0&&!/^(b)$/i.test(el.firstElementChild.tagName)) return;
+      var k=el.innerHTML.trim();
+      if(DICT.hasOwnProperty(k)) el.dataset.tk=k;
+    });
+  }
+  var T0=document.title;
+  function applyStatic(){
+    $$('[data-tk]').forEach(function(el){el.innerHTML=tr(el.dataset.tk);});
+    document.title=tr(T0);
+    var h1=$('.hero h1'); if(h1) h1.setAttribute('aria-label',tr('Start strong.'));
+    root.setAttribute('lang',lang);
+    $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===lang?'true':'false');});
+  }
+  function setLang(l,save){
+    lang=l; if(save){try{localStorage.setItem('sg-lang',l);}catch(e){}}
+    if(l==='ja' && !document.getElementById('jpfont')){var lk=document.createElement('link');lk.id='jpfont';lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap';document.head.appendChild(lk);}
+    applyStatic(); renderPrices(); status(); renderDays(); renderSched(); renderQ(); setFinalWa(); renderFaq(); splitAll(); buildLetters(); buildMq();
+    if(window.__mapRender) window.__mapRender();
+    setTimeout(measureMq,300);
+  }
+  tagStatic();
+  $$('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l,true);});});
+  renderPrices();
+  if(lang!=='en') setLang(lang,false); else applyStatic();
+
+  /* ---------- tilt cards ---------- */
+  if(!RM && window.matchMedia('(hover:hover)').matches){
+    $$('[data-tilt]').forEach(function(c){
+      c.addEventListener('pointermove',function(e){
+        var r=c.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+        c.style.setProperty('--mx',(px*100)+'%');c.style.setProperty('--my',(py*100)+'%');
+        c.style.transform='rotateX('+((.5-py)*7)+'deg) rotateY('+((px-.5)*9)+'deg) translateY(-6px)';
+      });
+      c.addEventListener('pointerleave',function(){c.style.transform='';});
+    });
+  }
+
+  /* ---------- cursor ---------- */
+  var cur=$('#cur'), ring=$('#ring'), cx=0,cy=0,rx=0,ry=0, hasCur=!RM && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(hasCur){
+    window.addEventListener('pointermove',function(e){cx=e.clientX;cy=e.clientY;},{passive:true});
+    document.addEventListener('pointerover',function(e){ring.classList.toggle('big',!!e.target.closest('a,button,[data-tilt]'));});
+    document.addEventListener('pointerdown',function(){ring.classList.add('dn');});
+    document.addEventListener('pointerup',function(){ring.classList.remove('dn');});
+  }
+
+  /* ---------- master loop ---------- */
+  var hero=$('.hero'), heroVis=true, last=performance.now(), t0=last;
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){heroVis=es[0].isIntersecting;},{threshold:0}).observe(hero);
+  var plate=$('.plate svg'), ticks=$('#ticks');
+  function loop(now){
+    var dt=Math.min((now-last)/1000,.05); last=now; var t=(now-t0)/1000;
+    act*=Math.pow(.3,dt); if(act>1.4) act=1.4;
+    scrollV*=Math.pow(.02,dt);
+    if(heroVis){
+      /* letters */
+      if(!RM){
+        var R=Math.min(window.innerWidth*.22,340);
+        letters.forEach(function(L){
+          var rc=L.el.getBoundingClientRect(), mx=rc.left+rc.width/2, my=rc.top+rc.height/2;
+          var dx=ptr.x-mx, dy=ptr.y-my, inf=Math.exp(-(dx*dx+dy*dy)/(R*R));
+          var wv=.5+.5*Math.sin(t*1.5+L.i*.8);
+          var tx=80+16*wv+58*inf, tw=620+110*wv+300*inf;
+          L.x+=(tx-L.x)*Math.min(1,dt*9); L.w+=(tw-L.w)*Math.min(1,dt*9);
+          L.el.style.fontVariationSettings='"wdth" '+L.x.toFixed(1)+',"wght" '+Math.min(L.w,900).toFixed(0);
+        });
+      }
+      /* ecg */
+      var tb=62+Math.min(act,1)*98; bpm+=(tb-bpm)*Math.min(1,dt*2.4);
+      if(!RM){ beats+=dt*bpm/60; drawE(); }
+      bpmT+=dt; if(bpmT>.15){bpmT=0;bpmEl.textContent=String(Math.round(bpm)).padStart(3,'0');}
+      /* plate */
+      if(!RM) plate.style.transform='rotate('+(window.scrollY*.12+t*6)+'deg)';
+    }
+    /* marquee */
+    if(!RM){
+      var base=70+Math.abs(scrollV)*5, sk=clamp(scrollV*.06,-10,10);
+      mqs.forEach(function(m,i){
+        if(!m.w) return;
+        var d=m.dir*(scrollV<-2?-1:1);
+        m.off-=d*base*dt;
+        m.off=(((m.off%m.w)+m.w)%m.w)-m.w;
+        m.el.style.transform='translate3d('+m.off+'px,0,0) skewX('+(-sk)+'deg)';
+      });
+    }
+    if(hasCur){
+      rx+=(cx-rx)*Math.min(1,dt*14); ry+=(cy-ry)*Math.min(1,dt*14);
+      cur.style.transform='translate3d('+cx+'px,'+cy+'px,0)'; ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';
+    }
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize',function(){resizeE();measureMq();});
+  resizeE();
+
+  /* ---------- loader ---------- */
+  var started=false;
+  function finish(){
+    root.classList.add('go');
+    setTimeout(function(){root.classList.add('loaded');},400);
+    setTimeout(function(){root.classList.add('ready');startReveals();},RM?0:650);
+  }
+  function runLoader(){
+    if(started) return; started=true;
+    measureMq();
+    requestAnimationFrame(loop);
+    if(RM){root.classList.add('loaded','go');root.classList.add('ready');startReveals();return;}
+    var num=$('#count'), plates=$$('#plates i'), s0=performance.now(), dur=1700, lit=0;
+    (function step(now){
+      var p=Math.min((now-s0)/dur,1), e=1-Math.pow(1-p,2.2), v=Math.round(e*100);
+      num.textContent=String(v).padStart(3,'0');
+      var n=Math.floor(v/10); while(lit<n&&lit<10){plates[lit].classList.add('on');lit++;}
+      if(p<1) requestAnimationFrame(step); else setTimeout(finish,260);
+    })(s0);
+  }
+  var fr=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
+  Promise.race([fr,new Promise(function(r){setTimeout(r,1500)})]).then(runLoader);
+})();
+</script>
+</body>
+</html>
