@@ -157,6 +157,25 @@ html.rm .dot.on{animation:none}
 .btn-dark{background:var(--bg);color:var(--lime)}
 .btn-dark:hover{background:#000}
 
+
+/* ---------- photos (Unsplash, hotlinked) ---------- */
+.ph{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.ph img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;opacity:0;transition:opacity 1.4s var(--e) .2s;will-change:transform}
+.ph img.ok{opacity:1}
+.hero .ph img{filter:grayscale(1) contrast(1.15) brightness(.5)}
+.hero .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,12,16,.92) 0%,rgba(11,12,16,.55) 55%,rgba(11,12,16,.8) 100%),linear-gradient(180deg,rgba(11,12,16,.5),rgba(11,12,16,0) 30%,var(--bg) 100%)}
+.hero .ph::after{content:"";position:absolute;inset:0;z-index:2;background:#c6ff3d;mix-blend-mode:soft-light;opacity:.22}
+.sc.c2>*:not(.ph){position:relative;z-index:1}
+.sc.c2 .ph img{filter:grayscale(1) brightness(.42) contrast(1.1);top:0;height:100%}
+.sc.c2 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--sf2) 18%,rgba(20,22,28,.35) 100%)}
+.final{position:relative;overflow:hidden}
+.final>.wrap{position:relative;z-index:1}
+.final .ph img{filter:grayscale(1) contrast(1.2);mix-blend-mode:multiply;top:0;height:100%}
+.final .ph img.ok{opacity:.32}
+.credit{font-size:13px;opacity:.7;margin-top:14px}
+.credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+html.rm .ph img{transition:none;transform:none!important}
+
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:max(720px,100svh);display:flex;flex-direction:column;overflow:clip;padding-top:110px}
 .hero .grid{width:100%;position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;gap:30px;padding-bottom:262px}
@@ -397,6 +416,7 @@ html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
 
 <!-- HERO -->
 <section class="hero" aria-label="Shiro Gym introduction">
+  <div class="ph" aria-hidden="true"><img src="https://images.unsplash.com/photo-1734630341082-0fec0e10126c?auto=format&fit=crop&w=1920&q=70" alt="" loading="eager" decoding="async" referrerpolicy="origin-when-cross-origin"></div>
   <div class="plate" aria-hidden="true">
     <svg viewBox="0 0 400 400" fill="none">
       <g id="ticks"></g>
@@ -448,6 +468,7 @@ html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
         <div class="big">05:00<small>to 23:00, daily</small></div>
       </article>
       <article class="sc c2" style="--i:1">
+        <div class="ph" aria-hidden="true"><img src="https://images.unsplash.com/photo-1738523686619-1b3b5d2405ee?auto=format&fit=crop&w=1400&q=70" alt="" loading="lazy" decoding="async" referrerpolicy="origin-when-cross-origin"></div>
         <div class="l"><span class="no" style="color:var(--lime)">02</span><div><h3>Coaches, not counters</h3><p style="margin-top:18px">Your first session is one-on-one. We set a simple eight-week plan and check in on it, so you are never guessing.</p></div></div>
         <div class="big">1:1<small>first session, included</small></div>
       </article>
@@ -559,6 +580,7 @@ html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
 
 <!-- FINAL -->
 <section class="lime-bg final" id="join">
+  <div class="ph" aria-hidden="true"><img src="https://images.unsplash.com/photo-1636302925863-6ad504baaf3c?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy" decoding="async" referrerpolicy="origin-when-cross-origin"></div>
   <div class="wrap">
     <h2 class="disp big" data-split="See you at *05:00.*">See you at 05:00.</h2>
     <div class="row rv">
@@ -574,6 +596,7 @@ html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
   <div class="wrap">
     <div class="logo"><b aria-hidden="true">白</b>Shiro Gym</div>
     <p>Shiro Gym is a concept project by Shiro Labs, made to show a landing page build. It is not a real business, and the prices, classes and hours are illustrative.</p>
+    <p class="credit">Photos from <a href="https://unsplash.com/photos/m4Jqyv5VwqY?utm_source=shiro_gym&utm_medium=referral" target="_blank" rel="noopener">Jason Grant</a>, <a href="https://unsplash.com/photos/M93-M-p95KU?utm_source=shiro_gym&utm_medium=referral" target="_blank" rel="noopener">Sergio Kian</a> and <a href="https://unsplash.com/photos/F412aTVczu0?utm_source=shiro_gym&utm_medium=referral" target="_blank" rel="noopener">Michael Starkie</a> on <a href="https://unsplash.com/?utm_source=shiro_gym&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>.</p>
   </div>
 </footer>
 
@@ -1166,6 +1189,20 @@ html[lang="ja"] #faq .h2{font-size:clamp(30px,13cqw,110px)}
   }
   var fr=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
   Promise.race([fr,new Promise(function(r){setTimeout(r,1500)})]).then(runLoader);
+})();
+</script>
+<script>
+(function(){
+  /* photos: fade in on load, hide on failure, slow scroll drift */
+  var imgs=[].slice.call(document.querySelectorAll('.ph img'));
+  imgs.forEach(function(im){
+    var ok=function(){im.classList.add('ok')};
+    if(im.complete&&im.naturalWidth)ok();else{im.addEventListener('load',ok);im.addEventListener('error',function(){im.parentNode.style.display='none'})}
+  });
+  if(document.documentElement.classList.contains('rm'))return;
+  var t=false;
+  function drift(){t=false;var vh=innerHeight;imgs.forEach(function(im){var r=im.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var p=(r.top+r.height/2-vh/2)/vh;im.style.transform='translate3d(0,'+(p*-5).toFixed(2)+'%,0)'})}
+  addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(drift)}},{passive:true});drift();
 })();
 </script>
 </body>
